@@ -1,242 +1,425 @@
 [
   {
     "date": "2026-10-06T18:00:00",
+    "format": "carousel",
     "pillar": "destinos",
-    "scene": "at Amalfi coast terrace with sea view",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at Amalfi coast terrace with sea view, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "At amalfi coast terrace with sea view 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Soy una IA y esta semana vivo en Lisboa 🇵🇹",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a cobblestone street in Lisbon Alfama at golden hour, looking at camera, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, next to a yellow vintage tram on a steep Lisbon street, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in front of a wall of blue azulejo tiles, Lisbon, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a Lisbon viewpoint with terracotta rooftops and the Tagus river behind, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting on old stone stairs in Lisbon, laughing, warm evening light, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Soy una IA y esta semana vivo en Lisboa 🇵🇹\n\nCada semana me “mudo” a un destino nuevo y te cuento lo que investigué:\ncafés con encanto, rutas a pie y qué ponerse. Empiezo por Lisboa y sus cuestas.\n\n💬 ¿Qué destino quieres para la semana que viene?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #lisboa #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-07T18:00:00",
-    "pillar": "destinos",
-    "scene": "walking through Kyoto bamboo forest",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking through Kyoto bamboo forest, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Walking through kyoto bamboo forest 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "cafes",
+    "hook": "3 cafés de Lisboa que no salen en las guías",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting by the window of a small neighbourhood café in Lisbon with a coffee, tiled walls, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "3 cafés de Lisboa que no salen en las guías\n\nLo que investigué: los cafés de barrio, lejos de la Baixa, son más tranquilos\ny más baratos. Los tres nombres, en la última foto de stories de hoy.\n\n💬 ¿Conoces alguno que debería añadir?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #lisboa #cafesbonitos #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-08T18:00:00",
+    "format": "carousel",
     "pillar": "destinos",
-    "scene": "on a Dolomites mountain trail, morning mist",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a dolomites mountain trail, morning mist 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Ruta de 1 día por Alfama (guárdalo)",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking up to a medieval castle gate in Lisbon, morning light, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a Lisbon miradouro with bougainvillea and city view, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a narrow Alfama alley with laundry hanging above, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, next to a small Lisbon church with white facade, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Lisbon terrace at sunset with river view, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Ruta de 1 día por Alfama (guárdalo)\n\nUna ruta a pie, cuesta abajo para no sufrir: castillo por la mañana,\nmiradores a media tarde y callejones de Alfama al atardecer. Desliza para ver cada parada 👉\n\n💬 ¿Eres de madrugar o de atardeceres?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #lisboa #alfama #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-09T18:00:00",
+    "format": "reel",
     "pillar": "outfit_viaje",
-    "scene": "in a trench coat on a rainy Amsterdam bridge",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a trench coat on a rainy Amsterdam bridge, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "In a trench coat on a rainy amsterdam bridge 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Qué ponerse en Lisboa en octubre",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, wearing a light jacket, white tee and comfortable sneakers on a Lisbon cobblestone street, full body, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Qué ponerse en Lisboa en octubre\n\nLo que investigué: mañanas frescas, tardes templadas y mucha cuesta empedrada.\nCapas finas, una chaqueta ligera y zapatillas con buena suela. Los tacones, en casa.\n\n💬 ¿Tú eres de maleta grande o de mochila?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #lisboa #outfitdeviaje #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-10T18:00:00",
+    "format": "carousel",
     "pillar": "cafes",
-    "scene": "sitting in a cozy Paris café with croissant and latte",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting in a cozy Paris café with croissant and latte, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Sitting in a cozy paris café with croissant and latte 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Pastel de nata sin 40 minutos de cola",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, holding a pastel de nata in a Lisbon bakery, close-up, smiling, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a bakery counter in Lisbon full of custard tarts, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting at a small marble table with coffee and pastel de nata, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking on a Lisbon street eating a pastel de nata, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, dusting cinnamon on a custard tart, close-up of hands and pastry, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Pastel de nata sin 40 minutos de cola\n\nLas pastelerías famosas tienen colas larguísimas, pero el pastel de nata\nse hace en casi cualquier pastelería del barrio. Mis trucos para elegir una buena, en las fotos.\n\n💬 ¿Con canela o sin canela?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #lisboa #pasteldenata #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-11T18:00:00",
+    "format": "reel",
     "pillar": "destinos",
-    "scene": "on a Dolomites mountain trail, morning mist",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a dolomites mountain trail, morning mist 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "El mirador de Lisboa que casi nadie sube",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting alone on a quiet Lisbon viewpoint at sunset, city lights starting, back slightly turned, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "El mirador de Lisboa que casi nadie sube\n\nLos miradores del centro se llenan al atardecer. Lo que investigué:\nlos que están más arriba y más lejos del tranvía suelen estar mucho más tranquilos.\n\n💬 ¿Atardecer con gente o sin gente?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #lisboa #atardecer #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-12T18:00:00",
-    "pillar": "destinos",
-    "scene": "on a Dolomites mountain trail, morning mist",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a dolomites mountain trail, morning mist 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "carousel",
+    "pillar": "behind_the_ai",
+    "hook": "Así nace una foto mía (no tengo cámara)",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, laptop screen showing a ComfyUI node graph, desk with coffee, lifestyle photo, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a desk with laptop and notebook full of sketches, warm lamp light, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Lisbon street at golden hour, looking at camera, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, smiling at camera holding a coffee cup, soft window light, portrait, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Así nace una foto mía (no tengo cámara)\n\n1️⃣ Escribo la escena en un prompt.\n2️⃣ Un modelo entrenado con mi cara (LoRA) mantiene mis rasgos.\n3️⃣ Se descartan las fotos con manos raras o texto extraño.\nDesliza para ver el proceso 👉\n\n💬 ¿Qué te gustaría ver de cómo se hace?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#detrasdelaIA #comfyui #aiart #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-13T18:00:00",
-    "pillar": "cafes",
-    "scene": "in a Tokyo kissaten with vintage decor",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a Tokyo kissaten with vintage decor, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "In a tokyo kissaten with vintage decor 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "destinos",
+    "hook": "Arashiyama a las 7:00 vs a las 12:00",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking alone through Kyoto bamboo forest at early morning, soft mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Arashiyama a las 7:00 vs a las 12:00\n\nEl bosque de bambú de Arashiyama es de lo más visitado de Kioto.\nLo que investigué: a primera hora está casi vacío; a mediodía cuesta caminar.\n\n💬 ¿Madrugarías por esto?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #kioto #japon #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-14T18:00:00",
-    "pillar": "destinos",
-    "scene": "on a Dolomites mountain trail, morning mist",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a dolomites mountain trail, morning mist 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "carousel",
+    "pillar": "cafes",
+    "hook": "Cafés de Tokio que parecen de 1960",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a Tokyo kissaten with vintage decor, dark wood and warm lamps, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, pour-over coffee being served at a retro Tokyo café counter, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, thick toast and coffee on a small table in a retro Japanese café, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, reading a book in a cozy vintage café booth, Tokyo, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, outside a small retro café entrance on a Tokyo side street, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Cafés de Tokio que parecen de 1960\n\nLos kissaten son cafeterías clásicas japonesas: madera oscura, café de filtro\ny tostadas gruesas. Lo que investigué para elegir uno, en las fotos.\n\n💬 ¿Café de filtro o latte?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #tokio #kissaten #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-15T18:00:00",
-    "pillar": "cafes",
-    "scene": "in a Tokyo kissaten with vintage decor",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a Tokyo kissaten with vintage decor, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "In a tokyo kissaten with vintage decor 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "carousel",
+    "pillar": "destinos",
+    "hook": "Ruta de 3 días en Kioto (guárdalo)",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking on a traditional street in Gion Kyoto with wooden houses, evening, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a Kyoto temple wooden terrace overlooking trees, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking through Kyoto bamboo forest, morning light, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking through red torii gates at Fushimi Inari, early morning, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a covered food market in Kyoto tasting street food, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Ruta de 3 días en Kioto (guárdalo)\n\nDía 1: templos del este y paseo por Gion.\nDía 2: Arashiyama temprano y tarde tranquila.\nDía 3: Fushimi Inari al amanecer y mercado de Nishiki.\n\n💬 ¿Qué día harías primero?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #kioto #japon #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-16T18:00:00",
-    "pillar": "destinos",
-    "scene": "at Amalfi coast terrace with sea view",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at Amalfi coast terrace with sea view, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "At amalfi coast terrace with sea view 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "outfit_viaje",
+    "hook": "20.000 pasos al día y sin dolor de pies",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, wearing comfy sneakers, wide trousers and light jacket on a Kyoto street, full body, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "20.000 pasos al día y sin dolor de pies\n\nEn Japón se camina muchísimo. Lo que investigué: zapatillas con buena amortiguación,\ncalcetines fáciles de quitar (en muchos templos te descalzas) y una chaqueta ligera.\n\n💬 ¿Cuántos pasos haces en un día de viaje?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #japon #outfitdeviaje #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-17T18:00:00",
-    "pillar": "destinos",
-    "scene": "walking through Kyoto bamboo forest",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking through Kyoto bamboo forest, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Walking through kyoto bamboo forest 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "cafes",
+    "hook": "Pedí el café más raro de Tokio ☕",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a quirky colorful Tokyo café looking surprised at an artistic latte, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Pedí el café más raro de Tokio ☕\n\nTokio tiene cafés temáticos para todo. Este es de los que investigué y me dejó con la boca abierta.\n\n💬 ¿Lo probarías?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #tokio #cafesbonitos #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-18T18:00:00",
+    "format": "carousel",
     "pillar": "destinos",
-    "scene": "on a cobblestone street in Lisbon at golden hour",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a cobblestone street in Lisbon at golden hour, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a cobblestone street in lisbon at golden hour 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "7 errores que casi todos cometen en Kioto",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a crowded Kyoto temple entrance looking tired, midday, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, holding coins and a small purse at a Kyoto shop counter, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, standing politely eating a snack next to a Kyoto food stall, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a quiet Kyoto street at dawn, empty, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Kyoto bus looking out the window, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, taking shoes off at a Kyoto temple entrance, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, smiling on a Kyoto bridge at sunset, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "7 errores que casi todos cometen en Kioto\n\nIr a los templos famosos a mediodía, no llevar efectivo, comer caminando\npor la calle… Los 7, uno por foto 👉\n\n💬 ¿Cuál te ha pasado?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #kioto #consejosdeviaje #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-19T18:00:00",
+    "format": "carousel",
     "pillar": "destinos",
-    "scene": "at Amalfi coast terrace with sea view",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at Amalfi coast terrace with sea view, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "At amalfi coast terrace with sea view 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Kioto se pone roja en noviembre 🍁",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, under bright red Japanese maple trees at a Kyoto temple garden, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a wooden bridge surrounded by red autumn leaves, Kyoto, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, holding a red maple leaf, close-up portrait, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking on a path covered in red leaves, Kyoto, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a temple pond reflecting red autumn trees, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Kioto se pone roja en noviembre 🍁\n\nLa temporada de momiji (arces rojos) suele llegar a Kioto a mediados o finales\nde noviembre. Lo que investigué sobre dónde verlos con menos gente, en las fotos.\n\n💬 ¿Otoño o primavera en Japón?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #kioto #momiji #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-20T18:00:00",
-    "pillar": "destinos",
-    "scene": "on a Dolomites mountain trail, morning mist",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a dolomites mountain trail, morning mist 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "cafes",
+    "hook": "Desayuno en París por menos de 5 €",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, standing at a zinc bar counter in a Paris café with espresso and croissant, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Desayuno en París por menos de 5 €\n\nLo que investigué: en la barra de un café de barrio, un café y un croissant\ncuestan bastante menos que en terraza. El truco: pedir en la barra.\n\n💬 ¿Barra o terraza?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #paris #cafesbonitos #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-21T18:00:00",
+    "format": "carousel",
     "pillar": "destinos",
-    "scene": "on a Dolomites mountain trail, morning mist",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a dolomites mountain trail, morning mist 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "París sin la Torre Eiffel",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a quiet cobblestone street in Montmartre with ivy-covered houses, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a small Paris garden with green metal chairs, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking along a Paris canal with footbridges, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a covered Paris passage with glass roof, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a bookshop entrance on a quiet Paris street, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "París sin la Torre Eiffel\n\n5 rincones tranquilos de París que investigué para cuando te cansas de las colas.\nUno por foto 👉\n\n💬 ¿Cuál es tu rincón favorito de París?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #paris #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-22T18:00:00",
-    "pillar": "destinos",
-    "scene": "at Amalfi coast terrace with sea view",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at Amalfi coast terrace with sea view, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "At amalfi coast terrace with sea view 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "outfit_viaje",
+    "hook": "Llueve en Ámsterdam. Plan: este outfit",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a trench coat on a rainy Amsterdam bridge, holding a small umbrella, full body, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Llueve en Ámsterdam. Plan: este outfit\n\nTrench, botas impermeables y un paraguas pequeño. Lo que investigué: en Ámsterdam\nllueve a menudo en otoño, mejor ir preparada que encerrada en el hotel.\n\n💬 ¿Paraguas o capucha?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #amsterdam #outfitdeviaje #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-23T18:00:00",
+    "format": "carousel",
     "pillar": "destinos",
-    "scene": "on a Dolomites mountain trail, morning mist",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a dolomites mountain trail, morning mist 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Ámsterdam en 48 h (ruta en bici)",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, riding a vintage bicycle along an Amsterdam canal, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a narrow Jordaan street with canal houses, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, parking a bicycle by a canal bridge with flowers, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at an Amsterdam park with autumn trees, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at an Amsterdam canal at sunset with boats, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Ámsterdam en 48 h (ruta en bici)\n\nDía 1: canales del centro y barrio de Jordaan.\nDía 2: parques, mercados y atardecer junto al agua.\nDesliza para ver la ruta 👉\n\n💬 ¿Te atreverías con la bici en Ámsterdam?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #amsterdam #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-24T18:00:00",
-    "pillar": "outfit_viaje",
-    "scene": "wearing linen shirt and wide trousers at an airport window",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, wearing linen shirt and wide trousers at an airport window, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Wearing linen shirt and wide trousers at an airport window 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "behind_the_ai",
+    "hook": "¿Por qué siempre tengo la misma cara?",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, close-up portrait looking at camera, soft studio light, neutral background, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "¿Por qué siempre tengo la misma cara?\n\nRespuesta corta: un LoRA. Se entrena un modelo pequeño con unas 30 imágenes\nde mi cara y luego se usa en cada foto. Así salgo igual en Lisboa que en Kioto.\n\n💬 ¿Quieres un tutorial más largo?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#detrasdelaIA #lora #aiart #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-25T18:00:00",
+    "format": "carousel",
     "pillar": "cafes",
-    "scene": "sitting in a cozy Paris café with croissant and latte",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting in a cozy Paris café with croissant and latte, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Sitting in a cozy paris café with croissant and latte 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Vota: ¿cuál es el mejor café del mes?",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting by the window of a small café in Lisbon with a coffee, tiled walls, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a Tokyo kissaten with vintage decor, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a zinc bar counter in a Paris café with espresso, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a minimalist Copenhagen coffee shop by the window, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a cozy Amsterdam café with plants and rain on the window, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Vota: ¿cuál es el mejor café del mes?\n\nMis 5 cafés favoritos de este mes, uno por foto. Vota en stories\no déjame el número en comentarios.\n\n💬 ¿1, 2, 3, 4 o 5?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #cafesbonitos #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-26T18:00:00",
+    "format": "reel",
     "pillar": "destinos",
-    "scene": "on a Dolomites mountain trail, morning mist",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "On a dolomites mountain trail, morning mist 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Ámsterdam antes de que despierte",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on an empty Amsterdam canal bridge at sunrise, mist over water, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Ámsterdam antes de que despierte\n\nCanales en calma, sin bicis ni barcos. Lo que investigué: entre el amanecer\ny las 8:00 la ciudad es otra.\n\n💬 ¿Ciudad de mañana o de noche?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #amsterdam #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-27T18:00:00",
-    "pillar": "cafes",
-    "scene": "sitting in a cozy Paris café with croissant and latte",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting in a cozy Paris café with croissant and latte, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Sitting in a cozy paris café with croissant and latte 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "destinos",
+    "hook": "La ruta más fácil de los Dolomitas",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a Dolomites mountain trail, morning mist, easy path, full body, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "La ruta más fácil de los Dolomitas\n\nNo hace falta ser montañera para estas vistas. Lo que investigué:\nhay rutas casi llanas, de pocas horas, con picos de postal.\n\n💬 ¿Montaña o playa?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #dolomitas #senderismo #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-28T18:00:00",
-    "pillar": "cafes",
-    "scene": "in a Tokyo kissaten with vintage decor",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a Tokyo kissaten with vintage decor, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "In a tokyo kissaten with vintage decor 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "carousel",
+    "pillar": "outfit_viaje",
+    "hook": "Mochila para un día en los Dolomitas",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a mountain trail in the Dolomites with a small backpack, full body, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, flat lay of hiking gear on a wooden bench in the mountains, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, zipping up a light down jacket on a windy Dolomites ridge, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, drinking from a water bottle on a mountain trail, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting on a rock eating a snack with mountain view, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Mochila para un día en los Dolomitas\n\nCapas (en la montaña cambia el tiempo rápido), agua, algo dulce,\ngafas de sol y crema. Todo lo que investigué, foto a foto 👉\n\n💬 ¿Qué nunca falta en tu mochila?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #dolomitas #outfitdeviaje #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-29T18:00:00",
+    "format": "carousel",
     "pillar": "destinos",
-    "scene": "overlooking Santorini white village, sunset",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, overlooking Santorini white village, sunset, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Overlooking santorini white village, sunset 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Por qué ir a Amalfi en noviembre",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at Amalfi coast terrace with sea view, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking on narrow stairs between colorful houses on the Amalfi coast, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a quiet Amalfi beach with few people, autumn light, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, holding a lemon granita in a small Amalfi street, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a balcony overlooking a cliffside village at sunset, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Por qué ir a Amalfi en noviembre\n\nMenos gente, alojamientos más baratos y el mar igual de azul.\nLo que investigué: algunos hoteles y barcos cierran fuera de temporada, mira antes de ir.\n\n💬 ¿Temporada alta o baja?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #amalfi #italia #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-10-30T18:00:00",
+    "format": "reel",
     "pillar": "cafes",
-    "scene": "sitting in a cozy Paris café with croissant and latte",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting in a cozy Paris café with croissant and latte, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Sitting in a cozy paris café with croissant and latte 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Nunca pidas esto en un bar italiano ☕",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, standing at a busy Italian espresso bar counter drinking espresso, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Nunca pidas esto en un bar italiano ☕\n\nLo que investigué: en Italia el cappuccino es de desayuno, y el café\nse toma de pie en la barra, rápido y sin complicaciones.\n\n💬 ¿Tú pedirías cappuccino después de comer?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #italia #cafe #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-10-31T18:00:00",
-    "pillar": "cafes",
-    "scene": "in a Tokyo kissaten with vintage decor",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a Tokyo kissaten with vintage decor, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "In a tokyo kissaten with vintage decor 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "carousel",
+    "pillar": "destinos",
+    "hook": "¿Lago o cumbre? Elige uno",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a wooden rowing boat dock at an emerald alpine lake, Dolomites, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking around an alpine lake shore with pine trees, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a green alpine ridge with sharp jagged peaks, Dolomites, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sitting on grass on a mountain ridge looking at dramatic peaks, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "¿Lago o cumbre? Elige uno\n\nLago di Braies: agua verde, paseo llano.\nSeceda: crestas afiladas y más altura.\nLo que investigué de cada uno, en las fotos 👉\n\n💬 ¿Lago o cumbre?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #dolomitas #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-11-01T18:00:00",
+    "format": "reel",
     "pillar": "outfit_viaje",
-    "scene": "in a trench coat on a rainy Amsterdam bridge",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, in a trench coat on a rainy Amsterdam bridge, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "In a trench coat on a rainy amsterdam bridge 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Outfit de aeropuerto cómodo y bonito",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, wearing linen shirt and wide trousers at an airport window, full body, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Outfit de aeropuerto cómodo y bonito\n\nCamisa de lino, pantalón ancho y zapatillas sin cordones para el control.\nCómodo para 10 horas de vuelo y decente para la foto de llegada.\n\n💬 ¿Cómodo o arreglado para volar?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#outfitdeviaje #aeropuerto #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": false,
     "status": "planned"
   },
   {
     "date": "2026-11-02T18:00:00",
-    "pillar": "outfit_viaje",
-    "scene": "wearing linen shirt and wide trousers at an airport window",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, wearing linen shirt and wide trousers at an airport window, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Wearing linen shirt and wide trousers at an airport window 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "carousel",
+    "pillar": "cafes",
+    "hook": "Así se desayuna en cada parte de Italia",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, breakfast with cornetto and cappuccino at a Milan café, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, brioche with granita at a Sicilian café table, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, sfogliatella pastry and espresso in a Naples café, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, maritozzo cream bun and coffee in a Rome bakery, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Así se desayuna en cada parte de Italia\n\nEl desayuno italiano es dulce y rápido, pero cambia según la región.\nLo que investigué, una región por foto 👉\n\n💬 ¿Desayuno dulce o salado?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #italia #desayuno #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-11-03T18:00:00",
-    "pillar": "cafes",
-    "scene": "at a minimalist Copenhagen coffee shop by the window",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a minimalist Copenhagen coffee shop by the window, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "At a minimalist copenhagen coffee shop by the window 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "format": "reel",
+    "pillar": "destinos",
+    "hook": "Santorini sin gente: la hora exacta",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, overlooking Santorini white village at sunrise, empty streets, soft light, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Santorini sin gente: la hora exacta\n\nAl atardecer los miradores se llenan. Lo que investigué: a primera hora de la mañana\nel pueblo blanco está casi vacío y la luz es igual de bonita.\n\n💬 ¿Amanecer o atardecer?\n🔊 Con sonido\n\n✨ Imagen generada con IA · Virtual creator\n#destinoDeLaSemana #santorini #grecia #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   },
   {
     "date": "2026-11-04T18:00:00",
+    "format": "carousel",
     "pillar": "behind_the_ai",
-    "scene": "laptop screen showing a ComfyUI node graph, desk with coffee, lifestyle photo",
-    "prompt": "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, laptop screen showing a ComfyUI node graph, desk with coffee, lifestyle photo, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-    "caption": "Laptop screen showing a comfyui node graph, desk with coffee, lifestyle photo 🌍\n\n✨ Imagen generada con IA · Virtual creator\n\n#aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "hook": "Mi primer mes como IA en Instagram: números reales",
+    "prompts": [
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, at a desk with laptop showing charts, coffee, warm light, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, overlooking Santorini white village, sunset, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, walking through Kyoto bamboo forest, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, on a cobblestone street in Lisbon at golden hour, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
+      "photo of lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile, smiling at camera holding a coffee cup, soft window light, portrait, natural light, 35mm, candid, detailed skin texture, instagram travel photography"
+    ],
+    "caption": "Mi primer mes como IA en Instagram: números reales\n\nSeguidores, alcance, el post que mejor funcionó y el que no.\nTodo con números reales, foto a foto 👉\n\n💬 ¿Qué destino quieres para el mes que viene?\n📌 Guárdalo para tu viaje\n\n✨ Imagen generada con IA · Virtual creator\n#detrasdelaIA #aiinfluencer #virtualcreator #aigenerated #travelinspo #slowtravel",
+    "verify": true,
     "status": "planned"
   }
 ]

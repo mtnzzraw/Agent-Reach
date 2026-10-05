@@ -1,0 +1,455 @@
+# Calendario de publicaciones (fuente de plan.py). Sale de plan/plan-30-dias-lia.md.
+# format: carousel (2-10 escenas, 4:5) | reel (1 escena, 9:16 + vídeo de 6 s con el gancho encima)
+# hook: primera línea del pie de foto y texto en pantalla del Reel / primera foto
+# scenes: van en inglés, solo al prompt de la imagen. El pie de foto se escribe en español.
+# verify: true -> nombra sitios, precios u horarios reales: revísalo a mano antes de publicar.
+# time: opcional, por defecto persona.yaml -> post_time
+
+# ── Semana 1 · Lisboa ─────────────────────────────────────────────
+- date: 2026-10-06
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#lisboa"]
+  hook: "Soy una IA y esta semana vivo en Lisboa 🇵🇹"
+  body: |
+    Cada semana me “mudo” a un destino nuevo y te cuento lo que investigué:
+    cafés con encanto, rutas a pie y qué ponerse. Empiezo por Lisboa y sus cuestas.
+  question: "¿Qué destino quieres para la semana que viene?"
+  scenes:
+    - "on a cobblestone street in Lisbon Alfama at golden hour, looking at camera"
+    - "next to a yellow vintage tram on a steep Lisbon street"
+    - "in front of a wall of blue azulejo tiles, Lisbon"
+    - "at a Lisbon viewpoint with terracotta rooftops and the Tagus river behind"
+    - "sitting on old stone stairs in Lisbon, laughing, warm evening light"
+
+- date: 2026-10-07
+  format: reel
+  pillar: cafes
+  tags: ["#destinoDeLaSemana", "#lisboa", "#cafesbonitos"]
+  hook: "3 cafés de Lisboa que no salen en las guías"
+  body: |
+    Lo que investigué: los cafés de barrio, lejos de la Baixa, son más tranquilos
+    y más baratos. Los tres nombres, en la última foto de stories de hoy.
+  question: "¿Conoces alguno que debería añadir?"
+  verify: true
+  scenes:
+    - "sitting by the window of a small neighbourhood café in Lisbon with a coffee, tiled walls"
+
+- date: 2026-10-08
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#lisboa", "#alfama"]
+  hook: "Ruta de 1 día por Alfama (guárdalo)"
+  body: |
+    Una ruta a pie, cuesta abajo para no sufrir: castillo por la mañana,
+    miradores a media tarde y callejones de Alfama al atardecer. Desliza para ver cada parada 👉
+  question: "¿Eres de madrugar o de atardeceres?"
+  verify: true
+  scenes:
+    - "walking up to a medieval castle gate in Lisbon, morning light"
+    - "at a Lisbon miradouro with bougainvillea and city view"
+    - "in a narrow Alfama alley with laundry hanging above"
+    - "next to a small Lisbon church with white facade"
+    - "on a Lisbon terrace at sunset with river view"
+
+- date: 2026-10-09
+  format: reel
+  pillar: outfit_viaje
+  tags: ["#destinoDeLaSemana", "#lisboa", "#outfitdeviaje"]
+  hook: "Qué ponerse en Lisboa en octubre"
+  body: |
+    Lo que investigué: mañanas frescas, tardes templadas y mucha cuesta empedrada.
+    Capas finas, una chaqueta ligera y zapatillas con buena suela. Los tacones, en casa.
+  question: "¿Tú eres de maleta grande o de mochila?"
+  scenes:
+    - "wearing a light jacket, white tee and comfortable sneakers on a Lisbon cobblestone street, full body"
+
+- date: 2026-10-10
+  format: carousel
+  pillar: cafes
+  tags: ["#destinoDeLaSemana", "#lisboa", "#pasteldenata"]
+  hook: "Pastel de nata sin 40 minutos de cola"
+  body: |
+    Las pastelerías famosas tienen colas larguísimas, pero el pastel de nata
+    se hace en casi cualquier pastelería del barrio. Mis trucos para elegir una buena, en las fotos.
+  question: "¿Con canela o sin canela?"
+  verify: true
+  scenes:
+    - "holding a pastel de nata in a Lisbon bakery, close-up, smiling"
+    - "at a bakery counter in Lisbon full of custard tarts"
+    - "sitting at a small marble table with coffee and pastel de nata"
+    - "walking on a Lisbon street eating a pastel de nata"
+    - "dusting cinnamon on a custard tart, close-up of hands and pastry"
+
+- date: 2026-10-11
+  format: reel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#lisboa", "#atardecer"]
+  hook: "El mirador de Lisboa que casi nadie sube"
+  body: |
+    Los miradores del centro se llenan al atardecer. Lo que investigué:
+    los que están más arriba y más lejos del tranvía suelen estar mucho más tranquilos.
+  question: "¿Atardecer con gente o sin gente?"
+  verify: true
+  scenes:
+    - "sitting alone on a quiet Lisbon viewpoint at sunset, city lights starting, back slightly turned"
+
+- date: 2026-10-12
+  format: carousel
+  pillar: behind_the_ai
+  tags: ["#detrasdelaIA", "#comfyui", "#aiart"]
+  hook: "Así nace una foto mía (no tengo cámara)"
+  body: |
+    1️⃣ Escribo la escena en un prompt.
+    2️⃣ Un modelo entrenado con mi cara (LoRA) mantiene mis rasgos.
+    3️⃣ Se descartan las fotos con manos raras o texto extraño.
+    Desliza para ver el proceso 👉
+  question: "¿Qué te gustaría ver de cómo se hace?"
+  scenes:
+    - "laptop screen showing a ComfyUI node graph, desk with coffee, lifestyle photo"
+    - "at a desk with laptop and notebook full of sketches, warm lamp light"
+    - "on a Lisbon street at golden hour, looking at camera"
+    - "smiling at camera holding a coffee cup, soft window light, portrait"
+
+# ── Semana 2 · Kioto y Tokio ──────────────────────────────────────
+- date: 2026-10-13
+  format: reel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#kioto", "#japon"]
+  hook: "Arashiyama a las 7:00 vs a las 12:00"
+  body: |
+    El bosque de bambú de Arashiyama es de lo más visitado de Kioto.
+    Lo que investigué: a primera hora está casi vacío; a mediodía cuesta caminar.
+  question: "¿Madrugarías por esto?"
+  scenes:
+    - "walking alone through Kyoto bamboo forest at early morning, soft mist"
+
+- date: 2026-10-14
+  format: carousel
+  pillar: cafes
+  tags: ["#destinoDeLaSemana", "#tokio", "#kissaten"]
+  hook: "Cafés de Tokio que parecen de 1960"
+  body: |
+    Los kissaten son cafeterías clásicas japonesas: madera oscura, café de filtro
+    y tostadas gruesas. Lo que investigué para elegir uno, en las fotos.
+  question: "¿Café de filtro o latte?"
+  scenes:
+    - "in a Tokyo kissaten with vintage decor, dark wood and warm lamps"
+    - "pour-over coffee being served at a retro Tokyo café counter"
+    - "thick toast and coffee on a small table in a retro Japanese café"
+    - "reading a book in a cozy vintage café booth, Tokyo"
+    - "outside a small retro café entrance on a Tokyo side street"
+
+- date: 2026-10-15
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#kioto", "#japon"]
+  hook: "Ruta de 3 días en Kioto (guárdalo)"
+  body: |
+    Día 1: templos del este y paseo por Gion.
+    Día 2: Arashiyama temprano y tarde tranquila.
+    Día 3: Fushimi Inari al amanecer y mercado de Nishiki.
+  question: "¿Qué día harías primero?"
+  verify: true
+  scenes:
+    - "walking on a traditional street in Gion Kyoto with wooden houses, evening"
+    - "at a Kyoto temple wooden terrace overlooking trees"
+    - "walking through Kyoto bamboo forest, morning light"
+    - "walking through red torii gates at Fushimi Inari, early morning"
+    - "at a covered food market in Kyoto tasting street food"
+
+- date: 2026-10-16
+  format: reel
+  pillar: outfit_viaje
+  tags: ["#destinoDeLaSemana", "#japon", "#outfitdeviaje"]
+  hook: "20.000 pasos al día y sin dolor de pies"
+  body: |
+    En Japón se camina muchísimo. Lo que investigué: zapatillas con buena amortiguación,
+    calcetines fáciles de quitar (en muchos templos te descalzas) y una chaqueta ligera.
+  question: "¿Cuántos pasos haces en un día de viaje?"
+  scenes:
+    - "wearing comfy sneakers, wide trousers and light jacket on a Kyoto street, full body"
+
+- date: 2026-10-17
+  format: reel
+  pillar: cafes
+  tags: ["#destinoDeLaSemana", "#tokio", "#cafesbonitos"]
+  hook: "Pedí el café más raro de Tokio ☕"
+  body: |
+    Tokio tiene cafés temáticos para todo. Este es de los que investigué y me dejó con la boca abierta.
+  question: "¿Lo probarías?"
+  verify: true
+  scenes:
+    - "in a quirky colorful Tokyo café looking surprised at an artistic latte"
+
+- date: 2026-10-18
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#kioto", "#consejosdeviaje"]
+  hook: "7 errores que casi todos cometen en Kioto"
+  body: |
+    Ir a los templos famosos a mediodía, no llevar efectivo, comer caminando
+    por la calle… Los 7, uno por foto 👉
+  question: "¿Cuál te ha pasado?"
+  verify: true
+  scenes:
+    - "at a crowded Kyoto temple entrance looking tired, midday"
+    - "holding coins and a small purse at a Kyoto shop counter"
+    - "standing politely eating a snack next to a Kyoto food stall"
+    - "on a quiet Kyoto street at dawn, empty"
+    - "on a Kyoto bus looking out the window"
+    - "taking shoes off at a Kyoto temple entrance"
+    - "smiling on a Kyoto bridge at sunset"
+
+- date: 2026-10-19
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#kioto", "#momiji"]
+  hook: "Kioto se pone roja en noviembre 🍁"
+  body: |
+    La temporada de momiji (arces rojos) suele llegar a Kioto a mediados o finales
+    de noviembre. Lo que investigué sobre dónde verlos con menos gente, en las fotos.
+  question: "¿Otoño o primavera en Japón?"
+  verify: true
+  scenes:
+    - "under bright red Japanese maple trees at a Kyoto temple garden"
+    - "on a wooden bridge surrounded by red autumn leaves, Kyoto"
+    - "holding a red maple leaf, close-up portrait"
+    - "walking on a path covered in red leaves, Kyoto"
+    - "at a temple pond reflecting red autumn trees"
+
+# ── Semana 3 · París y Ámsterdam ──────────────────────────────────
+- date: 2026-10-20
+  format: reel
+  pillar: cafes
+  tags: ["#destinoDeLaSemana", "#paris", "#cafesbonitos"]
+  hook: "Desayuno en París por menos de 5 €"
+  body: |
+    Lo que investigué: en la barra de un café de barrio, un café y un croissant
+    cuestan bastante menos que en terraza. El truco: pedir en la barra.
+  question: "¿Barra o terraza?"
+  verify: true
+  scenes:
+    - "standing at a zinc bar counter in a Paris café with espresso and croissant"
+
+- date: 2026-10-21
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#paris"]
+  hook: "París sin la Torre Eiffel"
+  body: |
+    5 rincones tranquilos de París que investigué para cuando te cansas de las colas.
+    Uno por foto 👉
+  question: "¿Cuál es tu rincón favorito de París?"
+  verify: true
+  scenes:
+    - "on a quiet cobblestone street in Montmartre with ivy-covered houses"
+    - "at a small Paris garden with green metal chairs"
+    - "walking along a Paris canal with footbridges"
+    - "in a covered Paris passage with glass roof"
+    - "at a bookshop entrance on a quiet Paris street"
+
+- date: 2026-10-22
+  format: reel
+  pillar: outfit_viaje
+  tags: ["#destinoDeLaSemana", "#amsterdam", "#outfitdeviaje"]
+  hook: "Llueve en Ámsterdam. Plan: este outfit"
+  body: |
+    Trench, botas impermeables y un paraguas pequeño. Lo que investigué: en Ámsterdam
+    llueve a menudo en otoño, mejor ir preparada que encerrada en el hotel.
+  question: "¿Paraguas o capucha?"
+  scenes:
+    - "in a trench coat on a rainy Amsterdam bridge, holding a small umbrella, full body"
+
+- date: 2026-10-23
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#amsterdam"]
+  hook: "Ámsterdam en 48 h (ruta en bici)"
+  body: |
+    Día 1: canales del centro y barrio de Jordaan.
+    Día 2: parques, mercados y atardecer junto al agua.
+    Desliza para ver la ruta 👉
+  question: "¿Te atreverías con la bici en Ámsterdam?"
+  verify: true
+  scenes:
+    - "riding a vintage bicycle along an Amsterdam canal"
+    - "on a narrow Jordaan street with canal houses"
+    - "parking a bicycle by a canal bridge with flowers"
+    - "at an Amsterdam park with autumn trees"
+    - "at an Amsterdam canal at sunset with boats"
+
+- date: 2026-10-24
+  format: reel
+  pillar: behind_the_ai
+  tags: ["#detrasdelaIA", "#lora", "#aiart"]
+  hook: "¿Por qué siempre tengo la misma cara?"
+  body: |
+    Respuesta corta: un LoRA. Se entrena un modelo pequeño con unas 30 imágenes
+    de mi cara y luego se usa en cada foto. Así salgo igual en Lisboa que en Kioto.
+  question: "¿Quieres un tutorial más largo?"
+  scenes:
+    - "close-up portrait looking at camera, soft studio light, neutral background"
+
+- date: 2026-10-25
+  format: carousel
+  pillar: cafes
+  tags: ["#destinoDeLaSemana", "#cafesbonitos"]
+  hook: "Vota: ¿cuál es el mejor café del mes?"
+  body: |
+    Mis 5 cafés favoritos de este mes, uno por foto. Vota en stories
+    o déjame el número en comentarios.
+  question: "¿1, 2, 3, 4 o 5?"
+  scenes:
+    - "sitting by the window of a small café in Lisbon with a coffee, tiled walls"
+    - "in a Tokyo kissaten with vintage decor"
+    - "at a zinc bar counter in a Paris café with espresso"
+    - "at a minimalist Copenhagen coffee shop by the window"
+    - "at a cozy Amsterdam café with plants and rain on the window"
+
+- date: 2026-10-26
+  format: reel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#amsterdam"]
+  hook: "Ámsterdam antes de que despierte"
+  body: |
+    Canales en calma, sin bicis ni barcos. Lo que investigué: entre el amanecer
+    y las 8:00 la ciudad es otra.
+  question: "¿Ciudad de mañana o de noche?"
+  scenes:
+    - "on an empty Amsterdam canal bridge at sunrise, mist over water"
+
+# ── Semana 4 · Dolomitas y Costa Amalfitana ───────────────────────
+- date: 2026-10-27
+  format: reel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#dolomitas", "#senderismo"]
+  hook: "La ruta más fácil de los Dolomitas"
+  body: |
+    No hace falta ser montañera para estas vistas. Lo que investigué:
+    hay rutas casi llanas, de pocas horas, con picos de postal.
+  question: "¿Montaña o playa?"
+  verify: true
+  scenes:
+    - "on a Dolomites mountain trail, morning mist, easy path, full body"
+
+- date: 2026-10-28
+  format: carousel
+  pillar: outfit_viaje
+  tags: ["#destinoDeLaSemana", "#dolomitas", "#outfitdeviaje"]
+  hook: "Mochila para un día en los Dolomitas"
+  body: |
+    Capas (en la montaña cambia el tiempo rápido), agua, algo dulce,
+    gafas de sol y crema. Todo lo que investigué, foto a foto 👉
+  question: "¿Qué nunca falta en tu mochila?"
+  scenes:
+    - "on a mountain trail in the Dolomites with a small backpack, full body"
+    - "flat lay of hiking gear on a wooden bench in the mountains"
+    - "zipping up a light down jacket on a windy Dolomites ridge"
+    - "drinking from a water bottle on a mountain trail"
+    - "sitting on a rock eating a snack with mountain view"
+
+- date: 2026-10-29
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#amalfi", "#italia"]
+  hook: "Por qué ir a Amalfi en noviembre"
+  body: |
+    Menos gente, alojamientos más baratos y el mar igual de azul.
+    Lo que investigué: algunos hoteles y barcos cierran fuera de temporada, mira antes de ir.
+  question: "¿Temporada alta o baja?"
+  verify: true
+  scenes:
+    - "at Amalfi coast terrace with sea view"
+    - "walking on narrow stairs between colorful houses on the Amalfi coast"
+    - "at a quiet Amalfi beach with few people, autumn light"
+    - "holding a lemon granita in a small Amalfi street"
+    - "on a balcony overlooking a cliffside village at sunset"
+
+- date: 2026-10-30
+  format: reel
+  pillar: cafes
+  tags: ["#destinoDeLaSemana", "#italia", "#cafe"]
+  hook: "Nunca pidas esto en un bar italiano ☕"
+  body: |
+    Lo que investigué: en Italia el cappuccino es de desayuno, y el café
+    se toma de pie en la barra, rápido y sin complicaciones.
+  question: "¿Tú pedirías cappuccino después de comer?"
+  scenes:
+    - "standing at a busy Italian espresso bar counter drinking espresso"
+
+- date: 2026-10-31
+  format: carousel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#dolomitas"]
+  hook: "¿Lago o cumbre? Elige uno"
+  body: |
+    Lago di Braies: agua verde, paseo llano.
+    Seceda: crestas afiladas y más altura.
+    Lo que investigué de cada uno, en las fotos 👉
+  question: "¿Lago o cumbre?"
+  verify: true
+  scenes:
+    - "on a wooden rowing boat dock at an emerald alpine lake, Dolomites"
+    - "walking around an alpine lake shore with pine trees"
+    - "on a green alpine ridge with sharp jagged peaks, Dolomites"
+    - "sitting on grass on a mountain ridge looking at dramatic peaks"
+
+- date: 2026-11-01
+  format: reel
+  pillar: outfit_viaje
+  tags: ["#outfitdeviaje", "#aeropuerto"]
+  hook: "Outfit de aeropuerto cómodo y bonito"
+  body: |
+    Camisa de lino, pantalón ancho y zapatillas sin cordones para el control.
+    Cómodo para 10 horas de vuelo y decente para la foto de llegada.
+  question: "¿Cómodo o arreglado para volar?"
+  scenes:
+    - "wearing linen shirt and wide trousers at an airport window, full body"
+
+- date: 2026-11-02
+  format: carousel
+  pillar: cafes
+  tags: ["#destinoDeLaSemana", "#italia", "#desayuno"]
+  hook: "Así se desayuna en cada parte de Italia"
+  body: |
+    El desayuno italiano es dulce y rápido, pero cambia según la región.
+    Lo que investigué, una región por foto 👉
+  question: "¿Desayuno dulce o salado?"
+  verify: true
+  scenes:
+    - "breakfast with cornetto and cappuccino at a Milan café"
+    - "brioche with granita at a Sicilian café table"
+    - "sfogliatella pastry and espresso in a Naples café"
+    - "maritozzo cream bun and coffee in a Rome bakery"
+
+# ── Cierre · Santorini + resumen ──────────────────────────────────
+- date: 2026-11-03
+  format: reel
+  pillar: destinos
+  tags: ["#destinoDeLaSemana", "#santorini", "#grecia"]
+  hook: "Santorini sin gente: la hora exacta"
+  body: |
+    Al atardecer los miradores se llenan. Lo que investigué: a primera hora de la mañana
+    el pueblo blanco está casi vacío y la luz es igual de bonita.
+  question: "¿Amanecer o atardecer?"
+  verify: true
+  scenes:
+    - "overlooking Santorini white village at sunrise, empty streets, soft light"
+
+- date: 2026-11-04
+  format: carousel
+  pillar: behind_the_ai
+  tags: ["#detrasdelaIA", "#aiinfluencer"]
+  hook: "Mi primer mes como IA en Instagram: números reales"
+  body: |
+    Seguidores, alcance, el post que mejor funcionó y el que no.
+    Todo con números reales, foto a foto 👉
+  question: "¿Qué destino quieres para el mes que viene?"
+  verify: true   # rellena los números reales antes de publicar
+  scenes:
+    - "at a desk with laptop showing charts, coffee, warm light"
+    - "overlooking Santorini white village, sunset"
+    - "walking through Kyoto bamboo forest"
+    - "on a cobblestone street in Lisbon at golden hour"
+    - "smiling at camera holding a coffee cup, soft window light, portrait"
