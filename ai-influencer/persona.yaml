@@ -1,20 +1,24 @@
 # Creadora virtual — SIEMPRE etiquetada como IA (bio, captions y etiqueta "AI info" de Instagram)
 name: Lía Marín
 handle: "@lia.wanders.ai"            # cambia por el handle real
-bio: "🤖 Creadora virtual (IA) · Viajes slow & cafés bonitos ✈️☕ · Un destino nuevo cada semana"
-niche: viajes y lifestyle
+bio: "🤖 Creadora virtual (IA) · Fitness & lifestyle 🏋️‍♀️☀️ · Entrena, viaja, repite"
+niche: fitness y lifestyle
 disclosure_caption: "✨ Imagen generada con IA · Virtual creator"
-base_hashtags: ["#aiinfluencer", "#virtualcreator", "#aigenerated", "#travelinspo", "#slowtravel"]
+base_hashtags: ["#aiinfluencer", "#virtualcreator", "#aigenerated", "#fitnessinspo", "#lifestyle"]
 # Descripción fija del personaje (úsala igual en TODOS los prompts + tu LoRA)
-character: "lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, warm smile"
-negative: "deformed hands, extra fingers, blurry, watermark, text, logo, plastic skin, lowres"
+character: "lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, athletic toned body, confident smile"
+# Tono: seguro y coqueto, estilo sportswear/swimwear de revista. Nada explícito ni desnudos
+# (Instagram lo penaliza y puede cerrar la cuenta).
+negative: "nudity, nsfw, deformed hands, extra fingers, blurry, watermark, text, logo, plastic skin, lowres"
 pillars:
-  - {name: destinos, weight: 4}
-  - {name: cafes, weight: 3}
-  - {name: outfit_viaje, weight: 2}
+  - {name: gym, weight: 4}
+  - {name: playa_sol, weight: 3}
+  - {name: lifestyle, weight: 3}
+  - {name: salida_noche, weight: 2}
   - {name: behind_the_ai, weight: 1}   # contenido sobre cómo se hace: genera confianza y comunidad
 scenes:
-  destinos: ["on a cobblestone street in Lisbon at golden hour", "overlooking Santorini white village, sunset", "walking through Kyoto bamboo forest", "on a Dolomites mountain trail, morning mist", "at Amalfi coast terrace with sea view"]
-  cafes: ["sitting in a cozy Paris café with croissant and latte", "at a minimalist Copenhagen coffee shop by the window", "in a Tokyo kissaten with vintage decor"]
-  outfit_viaje: ["wearing linen shirt and wide trousers at an airport window", "in a trench coat on a rainy Amsterdam bridge"]
+  gym: ["mirror selfie in a modern gym wearing matching sports bra and leggings, holding phone", "stretching on a yoga mat at sunrise by a window, athletic wear", "resting between sets on a bench, towel around neck, gym lighting", "post-workout selfie in cropped zip hoodie and biker shorts, glowing skin"]
+  playa_sol: ["walking on a beach at golden hour in a stylish bikini and sheer cover-up, looking over shoulder", "lounging by a rooftop pool in a one-piece swimsuit and sunglasses", "paddle board at sunrise, athletic swimwear, confident smile"]
+  lifestyle: ["sitting in a sunny café in a fitted crop top and high-waist jeans with iced coffee", "holding a green smoothie in a bright kitchen, activewear, morning light", "on a city street in oversized blazer and bike shorts, golden hour"]
+  salida_noche: ["in a fitted black mini dress at a rooftop bar, city lights, playful look at camera", "getting ready in front of a mirror, satin slip dress, warm bedroom lighting"]
   behind_the_ai: ["laptop screen showing a ComfyUI node graph, desk with coffee, lifestyle photo"]
