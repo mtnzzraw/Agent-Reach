@@ -4,8 +4,12 @@ from pathlib import Path
 
 HOST = "http://127.0.0.1:8188"
 
+# Perfiles: sd15 para Mac con 8 GB (512x768 se generan en ~1-2 min); sdxl para GPUs con >=12 GB.
+PROFILES = {"sd15": dict(w=512, h=768, steps=25, cfg=7.0),
+            "sdxl": dict(w=832, h=1216, steps=30, cfg=5.5)}
+
 def build_workflow(prompt, negative, checkpoint, lora=None, lora_strength=0.9,
-                   w=832, h=1216, steps=30, cfg=5.5, seed=None):
+                   w=512, h=768, steps=25, cfg=7.0, seed=None):
     seed = random.randint(0, 2**32 - 1) if seed is None else seed
     g = {"1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": checkpoint}}}
     model, clip = ["1", 0], ["1", 1]
