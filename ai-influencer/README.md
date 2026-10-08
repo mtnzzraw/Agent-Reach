@@ -10,3 +10,9 @@ Todo etiquetado como IA (bio + caption + etiqueta "AI info" de Instagram al publ
 4. Revisa las imágenes a mano antes de publicar (manos, texto raro).
 5. Publicación: `IG_USER_ID, IG_TOKEN, PUBLIC_BASE_URL` y cron cada hora → `python publish.py`.
    Cron diario → `python track.py`.
+
+## Mac 8 GB
+- `PROFILE=sd15` (por defecto) · `PROFILE=sdxl-lowvram` experimental (arranca ComfyUI con `--lowvram`; si da error de memoria vuelve a sd15).
+- Upscale opcional: pon un modelo en `ComfyUI/models/upscale_models` y `UPSCALE=RealESRGAN_x4plus.pth python run.py 1`.
+- `training_prompts.txt`: 30 prompts con distintos ángulos, luces y looks para sacar las imágenes del LoRA.
+  Elige una cara (misma `seed`/imagen de referencia) y usa solo las que mantengan los mismos rasgos.

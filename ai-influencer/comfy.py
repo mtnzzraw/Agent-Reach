@@ -6,10 +6,12 @@ HOST = "http://127.0.0.1:8188"
 
 # Perfiles: sd15 para Mac con 8 GB (512x768 se generan en ~1-2 min); sdxl para GPUs con >=12 GB.
 PROFILES = {"sd15": dict(w=512, h=768, steps=25, cfg=7.0),
-            "sdxl": dict(w=832, h=1216, steps=30, cfg=5.5)}
+            "sdxl": dict(w=832, h=1216, steps=30, cfg=5.5),
+            # SDXL en 8 GB: resolución reducida; arrancar ComfyUI con --lowvram. Experimental, puede fallar por memoria.
+            "sdxl-lowvram": dict(w=704, h=1024, steps=28, cfg=5.5)}
 
 def build_workflow(prompt, negative, checkpoint, lora=None, lora_strength=0.9,
-                   w=512, h=768, steps=25, cfg=7.0, seed=None):
+                   w=512, h=768, steps=25, cfg=7.0, seed=None, upscale_model=None):
     seed = random.randint(0, 2**32 - 1) if seed is None else seed
     g = {"1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": checkpoint}}}
     model, clip = ["1", 0], ["1", 1]
@@ -24,7 +26,13 @@ def build_workflow(prompt, negative, checkpoint, lora=None, lora_strength=0.9,
               "latent_image": ["5", 0], "seed": seed, "steps": steps, "cfg": cfg,
               "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 1.0}}
     g["7"] = {"class_type": "VAEDecode", "inputs": {"samples": ["6", 0], "vae": ["1", 2]}}
-    g["8"] = {"class_type": "SaveImage", "inputs": {"images": ["7", 0], "filename_prefix": "lia"}}
+    img = ["7", 0]
+    if upscale_model:   # modelo de ../ComfyUI/models/upscale_models (p.ej. RealESRGAN_x4plus.pth); ComfyUI lo aplica por mosaicos
+        g["9"] = {"class_type": "UpscaleModelLoader", "inputs": {"model_name": upscale_model}}
+        g["10"] = {"class_type": "ImageUpscaleWithModel", "inputs": {"upscale_model": ["9", 0], "image": img}}
+        g["11"] = {"class_type": "ImageScaleBy", "inputs": {"image": ["10", 0], "upscale_method": "lanczos", "scale_by": 0.5}}
+        img = ["11", 0]   # x4 del modelo reducido a x2 final
+    g["8"] = {"class_type": "SaveImage", "inputs": {"images": img, "filename_prefix": "lia"}}
     return g
 
 def _req(path, data=None):

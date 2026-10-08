@@ -3,9 +3,10 @@ import json, sys, yaml, os
 from pathlib import Path
 import comfy
 
-PROFILE = os.environ.get("PROFILE", "sd15")                         # sd15 (Mac 8 GB) | sdxl
+PROFILE = os.environ.get("PROFILE", "sd15")                         # sd15 (Mac 8 GB) | sdxl-lowvram (experimental) | sdxl
 CHECKPOINT = os.environ.get("CKPT", "v1-5-pruned-emaonly.safetensors" if PROFILE == "sd15"
                             else "sd_xl_base_1.0.safetensors")      # nombre en ComfyUI/models/checkpoints
+UPSCALE = os.environ.get("UPSCALE")                                 # p.ej. RealESRGAN_x4plus.pth (opcional, más lento)
 LORA = os.environ.get("LORA")                                       # p.ej. lia_character.safetensors
 
 def main(limit=7):
@@ -16,7 +17,7 @@ def main(limit=7):
     for it in plan:
         if it["status"] != "planned" or done >= limit:
             continue
-        wf = comfy.build_workflow(it["prompt"], p["negative"], CHECKPOINT, LORA, **comfy.PROFILES[PROFILE])
+        wf = comfy.build_workflow(it["prompt"], p["negative"], CHECKPOINT, LORA, upscale_model=UPSCALE, **comfy.PROFILES[PROFILE])
         it["images"] = comfy.generate(wf, "output")
         it["status"] = "generated"
         done += 1
