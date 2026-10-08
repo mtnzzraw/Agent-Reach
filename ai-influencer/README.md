@@ -16,3 +16,9 @@ Todo etiquetado como IA (bio + caption + etiqueta "AI info" de Instagram al publ
 - Upscale opcional: pon un modelo en `ComfyUI/models/upscale_models` y `UPSCALE=RealESRGAN_x4plus.pth python run.py 1`.
 - `training_prompts.txt`: 30 prompts con distintos ángulos, luces y looks para sacar las imágenes del LoRA.
   Elige una cara (misma `seed`/imagen de referencia) y usa solo las que mantengan los mismos rasgos.
+
+## Entrenar el LoRA (gratis)
+Abre `train_lora.ipynb` en Kaggle (GPU T4/P100) o Colab, sube tus imágenes de la cara y ejecuta las celdas.
+Con SD 1.5 el formato por defecto es cuadrado (512x512); los prompts con "full body" usan el vertical `sd15-tall`
+(en vertical con primer plano SD 1.5 duplica la cara). Consistencia: elige 15–30 imágenes con la misma cara; si no se parecen,
+entrena un primer LoRA con las mejores, regenera con él y entrena de nuevo con esas.

@@ -17,7 +17,7 @@ def main(limit=7):
     for it in plan:
         if it["status"] != "planned" or done >= limit:
             continue
-        wf = comfy.build_workflow(it["prompt"], p["negative"], CHECKPOINT, LORA, upscale_model=UPSCALE, **comfy.PROFILES[PROFILE])
+        wf = comfy.build_workflow(it["prompt"], p["negative"], CHECKPOINT, LORA, upscale_model=UPSCALE, **comfy.PROFILES["sd15-tall" if PROFILE == "sd15" and "full body" in it["prompt"] else PROFILE])
         it["images"] = comfy.generate(wf, "output")
         it["status"] = "generated"
         done += 1

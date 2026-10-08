@@ -4,8 +4,9 @@ from pathlib import Path
 
 HOST = "http://127.0.0.1:8188"
 
-# Perfiles: sd15 para Mac con 8 GB (512x768 se generan en ~1-2 min); sdxl para GPUs con >=12 GB.
-PROFILES = {"sd15": dict(w=512, h=768, steps=25, cfg=7.0),
+# Perfiles: sd15 para Mac con 8 GB; sdxl para GPUs con >=12 GB.
+PROFILES = {"sd15": dict(w=512, h=512, steps=25, cfg=7.0),       # cuadrado: evita la cara duplicada
+            "sd15-tall": dict(w=512, h=704, steps=25, cfg=7.0),  # vertical: solo para planos de cuerpo entero
             "sdxl": dict(w=832, h=1216, steps=30, cfg=5.5),
             # SDXL en 8 GB: resolución reducida; arrancar ComfyUI con --lowvram. Experimental, puede fallar por memoria.
             "sdxl-lowvram": dict(w=704, h=1024, steps=28, cfg=5.5)}
