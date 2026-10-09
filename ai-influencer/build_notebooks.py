@@ -105,15 +105,15 @@ for i, core in enumerate(PROMPTS, 1):
  code('''
 import glob
 from PIL import Image, ImageDraw
-files = sorted(glob.glob(f'{BASE}/candidatas/img_*.png'))
+files = sorted(glob.glob(f'{BASE}/candidatas/img_*.png'), key=lambda f: int(os.path.basename(f)[4:-4]))
 COLS, ROWS, T = 4, 3, 360
 for n in range(0, len(files), COLS * ROWS):
     sheet = Image.new('RGB', (COLS * T, ROWS * T), 'white'); d = ImageDraw.Draw(sheet)
     for k, f in enumerate(files[n:n + COLS * ROWS]):
         im = Image.open(f).convert('RGB'); im.thumbnail((T, T))
         x, y = (k % COLS) * T, (k // COLS) * T
-        sheet.paste(im, (x, y)); d.rectangle([x, y, x + 44, y + 24], fill='black')
-        d.text((x + 6, y + 6), os.path.basename(f)[4:6], fill='white')
+        sheet.paste(im, (x, y)); d.rectangle([x, y, x + 52, y + 24], fill='black')
+        d.text((x + 6, y + 6), os.path.basename(f)[4:-4], fill='white')
     sheet.save(f'{BASE}/candidatas/hoja_{n // (COLS * ROWS) + 1:02d}.jpg', quality=88)
 print('Hojas creadas en', f'{BASE}/candidatas')
 '''),
@@ -129,8 +129,8 @@ entero) y pon sus números en la lista `ELEGIDAS` de la primera celda: se copian
 '''),
  SETUP, INSTALL,
  code('''
-# Números de img_XX.png elegidos de lia2/candidatas (p. ej. [1, 4, 7, ...]). Se copian solos a lia2/dataset.
-ELEGIDAS = []
+# Números de img_XX.png elegidos de lia2/candidatas. Se copian solos a lia2/dataset. Edita la lista para cambiar la selección.
+ELEGIDAS = [28, 29, 30, 31, 33, 38, 39, 42, 43, 44, 52, 54, 56, 58, 61, 62, 63, 64, 75, 79, 80, 81, 84, 85, 86, 88, 91, 97]
 import shutil
 for n in ELEGIDAS:
     shutil.copy(f'{BASE}/candidatas/img_{n:02d}.png', f'{BASE}/dataset/')
