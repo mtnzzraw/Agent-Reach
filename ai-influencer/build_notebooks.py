@@ -184,13 +184,17 @@ n3 = nb([
 Usa el LoRA de `lia2/lora`. Genera las publicaciones del plan de 30 días con estilo de selfie / foto casual y las guarda en
 `lia2/salida_iphone` junto a `captions.csv` (texto con el aviso de IA). Cambia `DESDE` y `HASTA` para hacerlo por tandas.
 Las fotos de espejo piden el iPhone con su logo visible y el móvil tapando la cara (la IA no siempre lo dibuja bien: se descartan las que salgan mal).
-**GPU T4.** Aproximadamente 1 min por imagen (estimado). **Revisa cada imagen a mano** (manos, cara, proporciones, texto raro)
+**GPU T4.** Aproximadamente 1–2 min por imagen con la pasada de detalle (estimado, sin medir; ponla en `DETALLE = False` para ir más rápido). **Revisa cada imagen a mano** (manos, cara, proporciones, texto raro)
 y publica siempre con la etiqueta de IA.
 '''),
  SETUP, INSTALL,
- code(f"STYLE = {STYLE3!r}\nNEGATIVE = {NEGATIVE3!r}\nOUT = 'salida_iphone'\nPLAN = {json.dumps(plan, ensure_ascii=False, indent=1)}\nDESDE, HASTA = 1, 10     # días del plan a generar\n"),
+ code(f"STYLE = {STYLE3!r}\nNEGATIVE = {NEGATIVE3!r}\nOUT = 'salida_iphone'\nPLAN = {json.dumps(plan, ensure_ascii=False, indent=1)}\nDESDE, HASTA = 1, 10     # días del plan a generar\nDETALLE = True          # pasada de detalle: amplía la foto y repasa cara y piel (más definición, +1 min por foto)\nESCALA_DETALLE, FUERZA_DETALLE = 1.25, 0.3\n"),
  code(LOAD + COMPEL + '''
 pipe.load_lora_weights(f'{BASE}/lora', weight_name='pytorch_lora_weights.safetensors')
+from diffusers import StableDiffusionXLImg2ImgPipeline
+from PIL import Image
+refinar = StableDiffusionXLImg2ImgPipeline(**pipe.components)   # comparte modelo y LoRA: no gasta más memoria
+pipe.enable_vae_tiling(); refinar.enable_vae_tiling()
 import csv, os, random
 os.makedirs(f'{BASE}/{OUT}', exist_ok=True)
 cap = f'{BASE}/{OUT}/captions.csv'
@@ -209,9 +213,16 @@ for n in range(DESDE, HASTA + 1):
         cam = 'mirror photo, iPhone 16 Pro in a black case with three camera lenses and the Apple logo on its back'
     else:
         cam = 'shot on a phone, casual framing'
-    img = pipe(**codificar(f'{STYLE}, {cam}, {it["prompt"]}', NEGATIVE), width=832, height=1216,
-               num_inference_steps=30, guidance_scale=4.5, generator=g,
+    emb = codificar(f'{STYLE}, {cam}, {it["prompt"]}', NEGATIVE)
+    img = pipe(**emb, width=832, height=1216, num_inference_steps=30, guidance_scale=4.5, generator=g,
                cross_attention_kwargs={'scale': 0.9}).images[0]
+    if DETALLE:
+        try:
+            w2, h2 = int(832 * ESCALA_DETALLE) // 8 * 8, int(1216 * ESCALA_DETALLE) // 8 * 8
+            img = refinar(**emb, image=img.resize((w2, h2), Image.LANCZOS), strength=FUERZA_DETALLE, num_inference_steps=30,
+                          guidance_scale=4.5, generator=g, cross_attention_kwargs={'scale': 0.9}).images[0]
+        except torch.cuda.OutOfMemoryError:
+            torch.cuda.empty_cache(); print('sin memoria para la pasada de detalle: se guarda la foto sin repasar')
     img.save(f)
     with open(cap, 'a', newline='', encoding='utf-8') as fh:
         csv.writer(fh).writerow([n, it['pillar'], os.path.basename(f), it['caption']])
