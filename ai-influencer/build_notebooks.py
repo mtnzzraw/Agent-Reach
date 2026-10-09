@@ -9,32 +9,32 @@ DRIVE_DIR = "lia2"   # carpeta nueva en Drive (la anterior, "lia", tenía otra c
 # Los prompts de SDXL se truncan a 77 tokens: lo importante va primero y sin sintaxis de pesos "(x:1.4)".
 CHAR = ("26 year old ordinary woman, long wavy copper auburn hair, hazel eyes, clear natural skin, curvy hourglass figure")
 # Estilo "foto casera de móvil" (referencias: selfies de espejo en baños y dormitorios, flash, fondos cotidianos).
-STYLE_DS = "amateur phone photo, candid, natural skin texture with pores, imperfect framing"
+STYLE_DS = "amateur phone photo, candid, natural skin pores, imperfect framing"
 NEGATIVE_DS = ("nsfw, nudity, freckles, moles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, extra fingers, blurry, "
-               "watermark, text, plastic skin, airbrushed, professional photography, studio lighting, exaggerated proportions, "
+               "see-through clothing, nipples, topless, watermark, text, plastic skin, airbrushed, professional photography, studio lighting, exaggerated proportions, "
                "huge breasts, disproportionate body, cartoon, 3d render")
 
 # Estilo para las publicaciones. Solo estética: no se añaden metadatos falsos de cámara; las fotos siguen siendo IA
 # y se publican etiquetadas como tal. Se permiten logos reales (p. ej. la manzana del iPhone).
-STYLE3 = "amateur iPhone photo, candid, unedited, slight grain, imperfect framing"
-NEGATIVE3 = ("nsfw, nudity, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, extra fingers, blurry, watermark, "
-             "plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, professional photography, "
+STYLE3 = "amateur iPhone photo, candid, unedited, slight grain"
+NEGATIVE3 = ("nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, "
+             "extra fingers, blurry, watermark, plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, professional photography, "
              "bokeh, retouched, airbrushed, HDR, cinematic, perfect")
 
 # --- 100 candidatas 1024x1024, TODAS con la cara visible (el LoRA aprende cara y cuerpo): 25 selfies, 35 de espejo, 40 de cuerpo ---
 selfie = ["front camera selfie, close-up face, looking at camera", "front camera selfie, slight smile, head and shoulders",
           "selfie from slightly above, looking up at camera", "front camera selfie, laughing, messy hair",
-          "selfie, head tilted, relaxed expression"]
+          "selfie, head tilted, relaxed expression, scoop-neck top"]
 selfie_bg = ["bedroom", "small tiled bathroom", "car interior", "cafe", "street", "plain wall"]
-mirror = ["mirror selfie from the waist up, holding phone at chest height, face visible, fitted black crop top",
+mirror = ["mirror selfie from the waist up, holding phone at chest height, face visible, fitted black scoop-neck top, modest cleavage",
           "mirror selfie from the waist up, face visible, white fitted tank top and light blue jeans",
-          "mirror selfie from the waist up, face visible, blue windbreaker over a black top",
-          "mirror selfie from the waist up, face visible, fitted hoodie and high-waist jeans",
+          "mirror selfie from the waist up, face visible, open blue windbreaker over a low-cut black top, modest cleavage",
+          "mirror selfie from the waist up, face visible, hoodie unzipped over a fitted black top",
           "gym mirror selfie from the waist up, fitted sports bra and leggings, face visible",
-          "mirror selfie from the waist up, fitted summer dress, smiling"]
+          "mirror selfie from the waist up, fitted v-neck top, modest cleavage, smiling"]
 mirror_bg = ["small tiled bathroom", "bedroom with a round vintage mirror", "plain wall", "bedroom"]
 body = ["full-length mirror selfie, face visible, fitted top and light blue jeans, bedroom",
-        "full-length mirror selfie, face visible, black crop top and floral skirt, tiled bathroom",
+        "full-length mirror selfie, face visible, black scoop-neck crop top and floral skirt, tiled bathroom",
         "full body, sitting on an outdoor cafe sofa with an iced coffee, varsity jacket, ripped jeans, white sneakers",
         "full body, standing against a plain wall, fitted tank top and jeans, relaxed pose",
         "full body, walking on a sunny street, fitted top and jeans",
