@@ -1,44 +1,46 @@
-# Empieza aquí — Lía Marín (influencer IA, gratis)
+# Empieza aquí — Lía Marín (influencer IA, gratis, fotos realistas)
 
-Todo lo que se podía automatizar ya está hecho. Estos son los pasos que **solo puedes hacer tú**, en orden.
-Cada paso dice cuánto tarda y qué comprobar antes de seguir.
+Todo se hace en **Google Colab** (GPU gratis) y se guarda en tu **Google Drive**. El Mac ya no hace falta para generar:
+con SDXL realista salen caras mucho mejores que con SD 1.5. Necesitas solo una cuenta de Google.
 
-## 1. Probar que tu Mac genera imágenes (30–60 min la primera vez)
-1. Abre la app **Terminal** y pega:
-   ```
-   git clone https://github.com/mtnzzraw/Agent-Reach
-   cd Agent-Reach && git checkout claude/beautiful-goodall-w8susi
-   cd ai-influencer && bash setup.sh
-   ```
-2. Descarga el modelo **SD 1.5** (`v1-5-pruned-emaonly.safetensors`, unos 4 GB, desde Hugging Face:
-   `stable-diffusion-v1-5/stable-diffusion-v1-5`) y ponlo en `ComfyUI/models/checkpoints/`.
-3. Arranca ComfyUI con el comando que te imprime `setup.sh` y déjalo abierto.
-4. En otra ventana de Terminal: `cd Agent-Reach/ai-influencer && python plan.py 30 && python run.py 1`
-5. ✅ Comprobación: aparece una imagen en `ai-influencer/output/`. Apunta cuánto tardó.
-   (Medido en un Mac mini M1 de 8 GB: ~80 s por imagen. En la nube con CPU tardaba ~10 min.)
+> Tiempos y límites de Colab gratis **sin medir**: la GPU no está garantizada (a veces dice "no hay GPU disponible", repite más tarde)
+> y las sesiones se cortan tras unas horas. Todos los cuadernos retoman donde se quedaron.
 
-## 2. Crear la cara de Lía (1–2 horas)
-1. Genera las 30 imágenes: `python gen_dataset.py` (unos 45 min en tu Mac; se puede parar y reanudar). Salen en `dataset/`.
-2. Ejecuta `python contact_sheet.py` (junta las fotos en `dataset/hoja_01.jpg`…) y súbeselas a Claude para elegir. Quédate con **15–30 imágenes donde se vea la misma cara**. Borra las que no se parezcan.
-3. ✅ Comprobación: si pones todas juntas, parece la misma persona.
+## Cómo abrir un cuaderno
+1. Enlace directo (repo público):
+   `https://colab.research.google.com/github/mtnzzraw/Agent-Reach/blob/claude/beautiful-goodall-w8susi/ai-influencer/1_candidatas.ipynb`
+   (cambia `1_candidatas` por `2_entrenar_lora` o `3_generar` en los otros pasos).
+   Si falla: Colab → Archivo → Abrir cuaderno → pestaña **GitHub** → `mtnzzraw/Agent-Reach` → elige la rama → el archivo.
+2. **Entorno de ejecución → Cambiar tipo de entorno → GPU T4 → Guardar.**
+3. **Entorno de ejecución → Ejecutar todo.** La primera vez pide permiso para tu Drive: acepta.
 
-## 3. Entrenar el LoRA gratis (1–2 horas)
-1. Entra en **kaggle.com** (cuenta gratis, verifica el teléfono para activar la GPU) o en **colab.research.google.com**.
-2. Sube `train_lora.ipynb`. Activa GPU (T4/P100) e Internet.
-3. Sube tu carpeta de imágenes como `lia_dataset` y ejecuta las celdas en orden.
-4. Descarga `lia_character.safetensors` y cópialo a `ComfyUI/models/loras/`.
-5. ✅ Comprobación: `LORA=lia_character.safetensors python run.py 1` genera una imagen con esa cara.
+## Paso 1 — Caras candidatas (`1_candidatas.ipynb`)
+- Genera 60 retratos y los guarda en `Mi unidad/lia/candidatas/` (más unas `hoja_XX.jpg` para verlas de golpe).
+- ✅ Abre esa carpeta en Drive y mira las fotos.
 
-## 4. Producir contenido
-- `LORA=lia_character.safetensors python run.py 7` genera la semana (déjalo de noche).
-- Revisa cada imagen a mano (manos, cara, texto raro). Descarta las malas.
-- Mejora de calidad opcional: `UPSCALE=RealESRGAN_x4plus.pth` (más lento).
+## Paso 2 — Elegir la cara
+- Elige **20–30 fotos donde se vea la misma persona** y **muévelas** a `Mi unidad/lia/dataset/`.
+- Si quieres ayuda para elegir, sube las `hoja_XX.jpg` al chat de Claude.
+- Si ninguna se parece, repite el paso 1 (o dime y cambio la semilla).
 
-## 5. Instagram
-- Crea la cuenta como **Creator/Business**, con "IA" en la bio, y marca cada publicación con la etiqueta "AI info".
-- Al principio, publica **a mano** desde el móvil con los captions de `plan.json`. La API (`publish.py`) solo merece
-  la pena cuando todo lo demás funcione: pide cuenta vinculada a una página de Facebook y una app de Meta.
+## Paso 3 — Entrenar el LoRA (`2_entrenar_lora.ipynb`)
+- Aprende la cara de tu carpeta `lia/dataset`. Resultado en `lia/lora/pytorch_lora_weights.safetensors`.
+- ✅ La última celda dice "OK, LoRA guardado".
+
+## Paso 4 — Generar las fotos (`3_generar.ipynb`)
+- Genera las publicaciones del plan de 30 días con la cara de Lía. Cambia `DESDE, HASTA` para hacerlo por tandas.
+- Salen en `lia/salida/` con un `captions.csv` (texto con el aviso de IA).
+- **Revisa cada imagen a mano** (manos, cara, texto raro) y descarta las malas.
+
+## Paso 5 — Instagram
+- Cuenta **Creator/Business**, con "IA" en la bio y la etiqueta "AI info" en cada publicación.
+- Al principio publica **a mano** desde el móvil con los captions de `captions.csv`.
+  La API (`publish.py`) solo merece la pena cuando todo lo demás funcione (pide página de Facebook y app de Meta).
 - Tono: atrevido pero sin desnudos ni contenido explícito. Si lo cruzas, Instagram limita o cierra la cuenta.
 
+## Opcional: generar en tu Mac (peor calidad)
+`setup.sh`, `run.py`, `gen_dataset.py`, `contact_sheet.py` siguen funcionando con SD 1.5 en tu Mac de 8 GB,
+pero las caras salen peores. Útil solo para pruebas rápidas.
+
 ## Si algo falla
-Copia el mensaje de error completo y pídele ayuda a Claude con el archivo implicado.
+Copia el mensaje de error completo y pídele ayuda a Claude.

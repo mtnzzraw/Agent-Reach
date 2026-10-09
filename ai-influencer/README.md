@@ -17,8 +17,6 @@ Todo etiquetado como IA (bio + caption + etiqueta "AI info" de Instagram al publ
 - `training_prompts.txt`: 30 prompts con distintos ángulos, luces y looks para sacar las imágenes del LoRA.
   Elige una cara (misma `seed`/imagen de referencia) y usa solo las que mantengan los mismos rasgos.
 
-## Entrenar el LoRA (gratis)
-Abre `train_lora.ipynb` en Kaggle (GPU T4/P100) o Colab, sube tus imágenes de la cara y ejecuta las celdas.
-Con SD 1.5 el formato por defecto es cuadrado (512x512); los prompts con "full body" usan el vertical `sd15-tall`
-(en vertical con primer plano SD 1.5 duplica la cara). Consistencia: elige 15–30 imágenes con la misma cara; si no se parecen,
-entrena un primer LoRA con las mejores, regenera con él y entrena de nuevo con esas.
+## Fotos realistas (recomendado): Google Colab + SDXL
+Sigue **EMPIEZA_AQUI.md**. Tres cuadernos (`1_candidatas`, `2_entrenar_lora`, `3_generar`) con RealVisXL + LoRA de la cara,
+todo guardado en tu Google Drive. Se regeneran con `python build_notebooks.py` si cambias `persona.yaml`.

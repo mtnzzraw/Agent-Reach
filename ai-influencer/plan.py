@@ -14,8 +14,8 @@ def make_plan(days=30, per_day=1, start=None, seed=1):
             when = dt.datetime.combine(start + dt.timedelta(days=d), dt.time(18 + k * 2, 0))
             items.append({
                 "date": when.isoformat(), "pillar": pil, "scene": scene,
-                "prompt": f"photo of {p['character']}, {scene}, natural light, 35mm, candid, detailed skin texture, instagram travel photography",
-                "caption": f"{scene.capitalize()} 🌍\n\n{p['disclosure_caption']}\n\n" + " ".join(p["base_hashtags"]),
+                "prompt": f"photo of {p['character']}, {scene}, natural light, candid, detailed skin texture, instagram lifestyle photography",
+                "caption": f"{scene.capitalize()} ✨\n\n{p['disclosure_caption']}\n\n" + " ".join(p["base_hashtags"]),
                 "status": "planned",
             })
     return items
