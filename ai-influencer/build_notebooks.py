@@ -26,15 +26,15 @@ selfie = ["front camera selfie, close-up face, looking at camera", "front camera
           "selfie from slightly above, looking up at camera", "front camera selfie, laughing, messy hair",
           "selfie, head tilted, relaxed expression, scoop-neck top"]
 selfie_bg = ["bedroom", "small tiled bathroom", "car interior", "cafe", "street", "plain wall"]
-mirror = ["mirror selfie from the waist up, holding phone at chest height, face visible, fitted black scoop-neck top, modest cleavage",
-          "mirror selfie from the waist up, face visible, white fitted tank top and light blue jeans",
-          "mirror selfie from the waist up, face visible, open blue windbreaker over a low-cut black top, modest cleavage",
-          "mirror selfie from the waist up, face visible, hoodie unzipped over a fitted black top",
-          "gym mirror selfie from the waist up, fitted sports bra and leggings, face visible",
-          "mirror selfie from the waist up, fitted v-neck top, modest cleavage, smiling"]
+mirror = ["mirror photo from the waist up, holding phone at chest height, face visible, fitted black scoop-neck top, modest cleavage",
+          "mirror photo from the waist up, face visible, white fitted tank top and light blue jeans",
+          "mirror photo from the waist up, face visible, open blue windbreaker over a low-cut black top, modest cleavage",
+          "mirror photo from the waist up, face visible, hoodie unzipped over a fitted black top",
+          "gym mirror photo from the waist up, fitted sports bra and leggings, face visible",
+          "mirror photo from the waist up, fitted v-neck top, modest cleavage, smiling"]
 mirror_bg = ["small tiled bathroom", "bedroom with a round vintage mirror", "plain wall", "bedroom"]
-body = ["full-length mirror selfie, face visible, fitted top and light blue jeans, bedroom",
-        "full-length mirror selfie, face visible, black scoop-neck crop top and floral skirt, tiled bathroom",
+body = ["full-length mirror photo, face visible, fitted top and light blue jeans, bedroom",
+        "full-length mirror photo, face visible, black scoop-neck crop top and floral skirt, tiled bathroom",
         "full body, sitting on an outdoor cafe sofa with an iced coffee, varsity jacket, ripped jeans, white sneakers",
         "full body, standing against a plain wall, fitted tank top and jeans, relaxed pose",
         "full body, walking on a sunny street, fitted top and jeans",
@@ -170,7 +170,7 @@ n3 = nb([
 # 3 · Generar las fotos de Lía (SDXL + su LoRA), estilo foto de móvil
 Usa el LoRA de `lia2/lora`. Genera las publicaciones del plan de 30 días con estilo de selfie / foto casual y las guarda en
 `lia2/salida_iphone` junto a `captions.csv` (texto con el aviso de IA). Cambia `DESDE` y `HASTA` para hacerlo por tandas.
-Los selfies de espejo piden el iPhone con su logo visible y el móvil tapando la cara (la IA no siempre lo dibuja bien: se descartan las que salgan mal).
+Las fotos de espejo piden el iPhone con su logo visible y el móvil tapando la cara (la IA no siempre lo dibuja bien: se descartan las que salgan mal).
 **GPU T4.** Aproximadamente 1 min por imagen (estimado). **Revisa cada imagen a mano** (manos, cara, proporciones, texto raro)
 y publica siempre con la etiqueta de IA.
 '''),
@@ -186,16 +186,14 @@ if not os.path.exists(cap):
 VARIANTES_ESPEJO = 4   # selfies de espejo: se generan varias versiones para quedarte con la del móvil bien hecho
 for n in range(DESDE, HASTA + 1):
   it = PLAN[n - 1]
-  for v in range(VARIANTES_ESPEJO if 'mirror selfie' in it['prompt'] else 1):
-    f = f'{BASE}/{OUT}/{n:02d}_{it["pillar"]}' + (f'_v{v + 1}' if 'mirror selfie' in it['prompt'] else '') + '.png'
+  for v in range(VARIANTES_ESPEJO if 'mirror photo' in it['prompt'] else 1):
+    f = f'{BASE}/{OUT}/{n:02d}_{it["pillar"]}' + (f'_v{v + 1}' if 'mirror photo' in it['prompt'] else '') + '.png'
     if os.path.exists(f):
         continue
     seed = random.randint(0, 2**31)
     g = torch.Generator('cuda').manual_seed(seed)
-    if 'mirror selfie' in it['prompt']:
-        cam = 'mirror selfie, iPhone 16 Pro in a black case, three camera lenses and Apple logo on its back'
-    elif 'selfie' in it['prompt']:
-        cam = 'front camera selfie at arm length, wide angle, slightly imperfect framing'
+    if 'mirror photo' in it['prompt']:
+        cam = 'photo taken in a mirror, iPhone 16 Pro in a black case, three camera lenses and Apple logo on its back'
     else:
         cam = 'shot on a phone, casual framing'
     img = pipe(prompt=f'{STYLE}, {cam}, {it["prompt"]}', negative_prompt=NEGATIVE, width=832, height=1216,
