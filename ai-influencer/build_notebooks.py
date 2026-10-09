@@ -134,7 +134,7 @@ print('OK, LoRA guardado:' if os.path.exists(f) else 'NO se creó el LoRA, revis
 # Solo es estética: no se añade ningún metadato falso de cámara; las fotos siguen siendo IA y se publican etiquetadas.
 STYLE3 = "candid iPhone 16 Pro photo, unedited snapshot, natural light, sharp focus, social media post"
 NEGATIVE3 = ("nsfw, nudity, deformed, bad anatomy, deformed iris, uncanny, bad teeth, extra fingers, blurry, watermark, text, "
-             "logo, nike, swoosh, plastic skin, studio lighting, professional photography, bokeh, retouched, airbrushed, HDR, cinematic")
+             "nike, swoosh, plastic skin, studio lighting, professional photography, bokeh, retouched, airbrushed, HDR, cinematic")
 CONFIG3 = f"STYLE = {STYLE3!r}\nNEGATIVE = {NEGATIVE3!r}\nOUT = 'salida_iphone'    # carpeta nueva en lia/ (la anterior, 'salida', queda para comparar)\n"
 n3 = nb([
  md('''
@@ -159,8 +159,12 @@ for n in range(DESDE, HASTA + 1):
         continue
     seed = random.randint(0, 2**31)
     g = torch.Generator('cuda').manual_seed(seed)
-    selfie = 'selfie' in it['prompt']
-    cam = 'front camera selfie at arm length, wide angle, slightly imperfect framing' if selfie else 'shot on a phone, casual framing'
+    if 'mirror selfie' in it['prompt']:
+        cam = 'mirror selfie holding an iPhone 16 Pro, back of the phone with Apple logo and camera lenses visible'
+    elif 'selfie' in it['prompt']:
+        cam = 'front camera selfie at arm length, wide angle, slightly imperfect framing'
+    else:
+        cam = 'shot on a phone, casual framing'
     img = pipe(prompt=f'{STYLE}, {cam}, {it["prompt"]}', negative_prompt=NEGATIVE, width=832, height=1216,
                num_inference_steps=30, guidance_scale=4.5, generator=g,
                cross_attention_kwargs={'scale': 0.9}).images[0]
