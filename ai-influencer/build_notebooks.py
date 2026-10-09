@@ -17,9 +17,9 @@ NEGATIVE_DS = ("nsfw, nudity, freckles, moles, deformed, bad anatomy, deformed i
 # Estilo para las publicaciones. Solo estética: no se añaden metadatos falsos de cámara; las fotos siguen siendo IA
 # y se publican etiquetadas como tal. Se permiten logos reales (p. ej. la manzana del iPhone).
 STYLE3 = "amateur iPhone photo, candid, unedited, slight grain"
-NEGATIVE3 = ("nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, "
-             "extra fingers, blurry, watermark, plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, professional photography, "
-             "bokeh, retouched, airbrushed, HDR, cinematic, perfect")
+NEGATIVE3 = ("nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, extra fingers, "
+             "blurry, plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, "
+             "professional photography, bokeh, retouched, deformed phone, phone without camera lenses")
 
 # --- 100 candidatas 1024x1024, TODAS con la cara visible (el LoRA aprende cara y cuerpo): 25 selfies, 35 de espejo, 40 de cuerpo ---
 selfie = ["front camera selfie, close-up face, looking at camera", "front camera selfie, slight smile, head and shoulders",
@@ -130,7 +130,7 @@ entero) y pon sus números en la lista `ELEGIDAS` de la primera celda: se copian
  SETUP, INSTALL,
  code('''
 # Números de img_XX.png elegidos de lia2/candidatas. Se copian solos a lia2/dataset. Edita la lista para cambiar la selección.
-ELEGIDAS = [28, 29, 30, 31, 33, 38, 39, 42, 43, 44, 52, 54, 56, 58, 61, 62, 63, 64, 75, 79, 80, 81, 84, 85, 86, 88, 91, 97]
+ELEGIDAS = [28, 29, 30, 31, 33, 35, 38, 42, 43, 45, 52, 54, 55, 56, 57, 59, 61, 64, 80, 85, 89, 91, 94, 100]
 import shutil
 for n in ELEGIDAS:
     shutil.copy(f'{BASE}/candidatas/img_{n:02d}.png', f'{BASE}/dataset/')
@@ -183,15 +183,17 @@ os.makedirs(f'{BASE}/{OUT}', exist_ok=True)
 cap = f'{BASE}/{OUT}/captions.csv'
 if not os.path.exists(cap):
     open(cap, 'w', encoding='utf-8').write('dia,pilar,archivo,caption\\n')
+VARIANTES_ESPEJO = 4   # selfies de espejo: se generan varias versiones para quedarte con la del móvil bien hecho
 for n in range(DESDE, HASTA + 1):
-    it = PLAN[n - 1]
-    f = f'{BASE}/{OUT}/{n:02d}_{it["pillar"]}.png'
+  it = PLAN[n - 1]
+  for v in range(VARIANTES_ESPEJO if 'mirror selfie' in it['prompt'] else 1):
+    f = f'{BASE}/{OUT}/{n:02d}_{it["pillar"]}' + (f'_v{v + 1}' if 'mirror selfie' in it['prompt'] else '') + '.png'
     if os.path.exists(f):
         continue
     seed = random.randint(0, 2**31)
     g = torch.Generator('cuda').manual_seed(seed)
     if 'mirror selfie' in it['prompt']:
-        cam = 'mirror selfie, iPhone 16 Pro with Apple logo visible on its back, flash glare'
+        cam = 'mirror selfie, iPhone 16 Pro in a black case, three camera lenses and Apple logo on its back'
     elif 'selfie' in it['prompt']:
         cam = 'front camera selfie at arm length, wide angle, slightly imperfect framing'
     else:
