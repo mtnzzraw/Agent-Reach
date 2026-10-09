@@ -15,10 +15,10 @@ Cada paso dice cuánto tarda y qué comprobar antes de seguir.
 3. Arranca ComfyUI con el comando que te imprime `setup.sh` y déjalo abierto.
 4. En otra ventana de Terminal: `cd Agent-Reach/ai-influencer && python plan.py 30 && python run.py 1`
 5. ✅ Comprobación: aparece una imagen en `ai-influencer/output/`. Apunta cuánto tardó.
-   (En la nube, con CPU, tardó ~9–12 min. Tu Mac debería ir más rápido; no está medido.)
+   (Medido en un Mac mini M1 de 8 GB: ~80 s por imagen. En la nube con CPU tardaba ~10 min.)
 
 ## 2. Crear la cara de Lía (1–2 horas)
-1. Genera las 30 imágenes: `python gen_dataset.py` (unos 45 min en tu Mac; se puede parar y reanudar). Salen en `dataset/
+1. Genera las 30 imágenes: `python gen_dataset.py` (unos 45 min en tu Mac; se puede parar y reanudar). Salen en `dataset/`.
 2. Quédate con **15–30 imágenes donde se vea la misma cara**. Borra las que no se parezcan.
 3. ✅ Comprobación: si pones todas juntas, parece la misma persona.
 
