@@ -11,7 +11,7 @@ NEGATIVE = ("nsfw, nudity, deformed, bad anatomy, deformed iris, deformed pupils
 SUFFIX = re.compile(r",\s*RAW photo, natural skin texture.*$")
 faces = [SUFFIX.sub("", l.strip()).replace("lia_character, ", "") for l in open("training_prompts_faces.txt") if l.strip()][:60]
 # El LoRA ya lleva la identidad: el prompt solo necesita el disparador + la escena (si no, SDXL trunca a 77 tokens).
-plan = [{"pillar": x["pillar"], "prompt": f"photo of lia_character woman, {x['scene']}, natural light, candid",
+plan = [{"pillar": x["pillar"], "prompt": f"photo of lia_character woman, {x['scene']}",
          "caption": x["caption"]} for x in make_plan(30)]
 
 def md(t): return {"cell_type": "markdown", "metadata": {}, "source": t.strip("\n").splitlines(True)}
@@ -130,31 +130,39 @@ print('OK, LoRA guardado:' if os.path.exists(f) else 'NO se creó el LoRA, revis
 ])
 
 # ---------- 3: generar ----------
+# Estilo "foto de móvil" (selfie / foto casual), en vez del aspecto de estudio del cuaderno 1.
+# Solo es estética: no se añade ningún metadato falso de cámara; las fotos siguen siendo IA y se publican etiquetadas.
+STYLE3 = "candid iPhone 16 Pro photo, unedited snapshot, natural light, sharp focus, social media post"
+NEGATIVE3 = ("nsfw, nudity, deformed, bad anatomy, deformed iris, uncanny, bad teeth, extra fingers, blurry, watermark, text, "
+             "logo, nike, swoosh, plastic skin, studio lighting, professional photography, bokeh, retouched, airbrushed, HDR, cinematic")
+CONFIG3 = f"STYLE = {STYLE3!r}\nNEGATIVE = {NEGATIVE3!r}\nOUT = 'salida_iphone'    # carpeta nueva en lia/ (la anterior, 'salida', queda para comparar)\n"
 n3 = nb([
  md('''
 # 3 · Generar las fotos de Lía (SDXL + su LoRA)
-Usa el LoRA de `lia/lora`. Genera las publicaciones del plan de 30 días y las guarda en `lia/salida`
+Usa el LoRA de `lia/lora`. Genera las publicaciones del plan de 30 días con estilo de foto de móvil (selfie, casual) y las guarda en `lia/salida_iphone`
 junto a `captions.csv` (texto con el aviso de IA). Cambia `DESDE` y `HASTA` para hacerlo por tandas.
 **GPU T4.** Aproximadamente 1 min por imagen (estimado). **Revisa cada imagen a mano** (manos, cara, texto raro) antes de publicar,
 y publica siempre con la etiqueta de IA.
 '''),
  SETUP, INSTALL,
- code(CONFIG + f"PLAN = {json.dumps(plan, ensure_ascii=False, indent=1)}\nDESDE, HASTA = 1, 10     # días del plan a generar\n"),
+ code(CONFIG3 + f"PLAN = {json.dumps(plan, ensure_ascii=False, indent=1)}\nDESDE, HASTA = 1, 10     # días del plan a generar\n"),
  code(LOAD + '''
 pipe.load_lora_weights(f'{BASE}/lora', weight_name='pytorch_lora_weights.safetensors')
 import csv, os, random
-cap = f'{BASE}/salida/captions.csv'
+os.makedirs(f'{BASE}/{OUT}', exist_ok=True)\ncap = f'{BASE}/{OUT}/captions.csv'
 if not os.path.exists(cap):
     open(cap, 'w', encoding='utf-8').write('dia,pilar,archivo,caption\\n')
 for n in range(DESDE, HASTA + 1):
     it = PLAN[n - 1]
-    f = f'{BASE}/salida/{n:02d}_{it["pillar"]}.png'
+    f = f'{BASE}/{OUT}/{n:02d}_{it["pillar"]}.png'
     if os.path.exists(f):
         continue
     seed = random.randint(0, 2**31)
     g = torch.Generator('cuda').manual_seed(seed)
-    img = pipe(prompt=f'{STYLE}, {it["prompt"]}', negative_prompt=NEGATIVE, width=832, height=1216,
-               num_inference_steps=30, guidance_scale=5.0, generator=g,
+    selfie = 'selfie' in it['prompt']
+    cam = 'front camera selfie at arm length, wide angle, slightly imperfect framing' if selfie else 'shot on a phone, casual framing'
+    img = pipe(prompt=f'{STYLE}, {cam}, {it["prompt"]}', negative_prompt=NEGATIVE, width=832, height=1216,
+               num_inference_steps=30, guidance_scale=4.5, generator=g,
                cross_attention_kwargs={'scale': 0.9}).images[0]
     img.save(f)
     with open(cap, 'a', newline='', encoding='utf-8') as fh:

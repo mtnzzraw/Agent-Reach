@@ -28,7 +28,7 @@ con SDXL realista salen caras mucho mejores que con SD 1.5. Necesitas solo una c
 
 ## Paso 4 — Generar las fotos (`3_generar.ipynb`)
 - Genera las publicaciones del plan de 30 días con la cara de Lía. Cambia `DESDE, HASTA` para hacerlo por tandas.
-- Salen en `lia/salida/` con un `captions.csv` (texto con el aviso de IA).
+- Salen en `lia/salida_iphone/` (estilo foto de móvil) con un `captions.csv` (texto con el aviso de IA).
 - **Revisa cada imagen a mano** (manos, cara, texto raro) y descarta las malas.
 
 ## Paso 5 — Instagram
