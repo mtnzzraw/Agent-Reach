@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw
 COLS, ROWS, THUMB = 5, 3, 320   # 15 fotos por hoja
 
 def main():
-    files = sorted(p for p in Path("dataset").glob("lia_*.png"))
+    files = sorted(p for p in Path("dataset").glob("*_[0-9][0-9].png"))
     if not files:
         raise SystemExit("No hay imágenes en dataset/")
     per = COLS * ROWS
@@ -19,8 +19,8 @@ def main():
             im.thumbnail((THUMB, THUMB))
             x, y = (i % COLS) * THUMB, (i // COLS) * THUMB
             sheet.paste(im, (x, y))
-            d.rectangle([x, y, x + 46, y + 26], fill="black")
-            d.text((x + 6, y + 6), f.stem.split("_")[1], fill="white")   # número de la foto
+            d.rectangle([x, y, x + 62, y + 26], fill="black")
+            d.text((x + 6, y + 6), f.stem, fill="white")   # número de la foto
         out = Path("dataset") / f"hoja_{n // per + 1:02d}.jpg"
         sheet.save(out, quality=85)
         print("creada", out)
