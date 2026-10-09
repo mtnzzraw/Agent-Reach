@@ -1,5 +1,5 @@
 """Cliente mínimo de ComfyUI: construye un workflow SDXL+LoRA, lo envía y descarga las imágenes."""
-import json, time, random, urllib.request, urllib.parse
+import json, os, time, random, urllib.request, urllib.parse
 from pathlib import Path
 
 HOST = "http://127.0.0.1:8188"
@@ -11,8 +11,29 @@ PROFILES = {"sd15": dict(w=512, h=512, steps=25, cfg=7.0),       # cuadrado: evi
             # SDXL en 8 GB: resolución reducida; arrancar ComfyUI con --lowvram. Experimental, puede fallar por memoria.
             "sdxl-lowvram": dict(w=704, h=1024, steps=28, cfg=5.5)}
 
+COMFY_DIR = Path(__file__).resolve().parent.parent / "ComfyUI"
+
+def default_checkpoint(profile="sd15"):
+    """CKPT del entorno > Realistic Vision (mejores caras) si está descargado > SD 1.5 base > SDXL."""
+    if os.environ.get("CKPT"):
+        return os.environ["CKPT"]
+    if profile == "sd15":
+        for name in ("Realistic_Vision_V5.1_fp16-no-ema.safetensors", "v1-5-pruned-emaonly.safetensors"):
+            if (COMFY_DIR / "models" / "checkpoints" / name).exists():
+                return name
+        return "v1-5-pruned-emaonly.safetensors"
+    return "sd_xl_base_1.0.safetensors"
+
+def default_vae():
+    """VAE externo (Realistic Vision 'noVAE' lo necesita para no salir apagado/borroso)."""
+    if os.environ.get("VAE"):
+        return os.environ["VAE"]
+    name = "vae-ft-mse-840000-ema-pruned.safetensors"
+    return name if (COMFY_DIR / "models" / "vae" / name).exists() else None
+
 def build_workflow(prompt, negative, checkpoint, lora=None, lora_strength=0.9,
-                   w=512, h=768, steps=25, cfg=7.0, seed=None, upscale_model=None):
+                   w=512, h=768, steps=25, cfg=7.0, seed=None, upscale_model=None,
+                   vae=None, hires=False):
     seed = random.randint(0, 2**32 - 1) if seed is None else seed
     g = {"1": {"class_type": "CheckpointLoaderSimple", "inputs": {"ckpt_name": checkpoint}}}
     model, clip = ["1", 0], ["1", 1]
@@ -26,7 +47,18 @@ def build_workflow(prompt, negative, checkpoint, lora=None, lora_strength=0.9,
     g["6"] = {"class_type": "KSampler", "inputs": {"model": model, "positive": ["3", 0], "negative": ["4", 0],
               "latent_image": ["5", 0], "seed": seed, "steps": steps, "cfg": cfg,
               "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 1.0}}
-    g["7"] = {"class_type": "VAEDecode", "inputs": {"samples": ["6", 0], "vae": ["1", 2]}}
+    vae_ref = ["1", 2]
+    if vae:
+        g["12"] = {"class_type": "VAELoader", "inputs": {"vae_name": vae}}
+        vae_ref = ["12", 0]
+    latent = ["6", 0]
+    if hires:   # 2ª pasada a 1.5x: es lo que más mejora las caras pequeñas en SD 1.5
+        g["13"] = {"class_type": "LatentUpscaleBy", "inputs": {"samples": latent, "upscale_method": "bislerp", "scale_by": 1.5}}
+        g["14"] = {"class_type": "KSampler", "inputs": {"model": model, "positive": ["3", 0], "negative": ["4", 0],
+                   "latent_image": ["13", 0], "seed": seed, "steps": max(10, steps // 2), "cfg": cfg,
+                   "sampler_name": "dpmpp_2m", "scheduler": "karras", "denoise": 0.5}}
+        latent = ["14", 0]
+    g["7"] = {"class_type": "VAEDecode", "inputs": {"samples": latent, "vae": vae_ref}}
     img = ["7", 0]
     if upscale_model:   # modelo de ../ComfyUI/models/upscale_models (p.ej. RealESRGAN_x4plus.pth); ComfyUI lo aplica por mosaicos
         g["9"] = {"class_type": "UpscaleModelLoader", "inputs": {"model_name": upscale_model}}

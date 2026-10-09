@@ -7,7 +7,8 @@ import yaml
 import comfy
 
 PROFILE = os.environ.get("PROFILE", "sd15")
-CHECKPOINT = os.environ.get("CKPT", "v1-5-pruned-emaonly.safetensors" if PROFILE == "sd15" else "sd_xl_base_1.0.safetensors")
+CHECKPOINT = comfy.default_checkpoint(PROFILE)
+HIRES = os.environ.get("HIRES", "0") == "1"
 
 def main(n=30, seed=1234):
     negative = yaml.safe_load(open("persona.yaml"))["negative"]
@@ -18,7 +19,7 @@ def main(n=30, seed=1234):
         if (out / f"{prefix}_{i:02d}.png").exists():
             continue   # permite reanudar si lo paras
         prof = "sd15-tall" if PROFILE == "sd15" and "full body" in p else PROFILE
-        wf = comfy.build_workflow(p, negative, CHECKPOINT, seed=seed, **comfy.PROFILES[prof])
+        wf = comfy.build_workflow(p, negative, CHECKPOINT, seed=seed, vae=comfy.default_vae(), hires=HIRES, **comfy.PROFILES[prof])
         for attempt in range(1, 4):   # sin supervisión: si una imagen falla, reintenta y sigue con la siguiente
             try:
                 saved = comfy.generate(wf, str(out))

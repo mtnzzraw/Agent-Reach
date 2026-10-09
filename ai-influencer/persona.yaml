@@ -9,7 +9,7 @@ base_hashtags: ["#aiinfluencer", "#virtualcreator", "#aigenerated", "#fitnessins
 character: "lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, athletic toned body, confident smile"
 # Tono: seguro y coqueto, estilo sportswear/swimwear de revista. Nada explícito ni desnudos
 # (Instagram lo penaliza y puede cerrar la cuenta).
-negative: "nudity, nsfw, deformed hands, extra fingers, bad anatomy, bad teeth, deformed face, blurry, watermark, text, logo, brand logo, nike, adidas, swoosh, plastic skin, lowres"
+negative: "nudity, nsfw, deformed hands, extra fingers, bad anatomy, bad teeth, deformed face, blurry, watermark, text, logo, brand logo, nike, adidas, swoosh, plastic skin, lowres, (worst quality, low quality:1.4), deformed iris, deformed pupils, asymmetrical eyes, cross-eyed, uncanny, ugly, bad proportions"
 pillars:
   - {name: gym, weight: 4}
   - {name: playa_sol, weight: 3}
