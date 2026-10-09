@@ -15,6 +15,7 @@ pillars:
   - {name: playa_sol, weight: 3}
   - {name: lifestyle, weight: 3}
   - {name: salida_noche, weight: 2}
+  - {name: sin_cara, weight: 4}   # fotos de espaldas/cuerpo/detalle: la cara no tiene que salir
   - {name: behind_the_ai, weight: 1}   # contenido sobre cómo se hace: genera confianza y comunidad
 scenes:
   gym: ["mirror selfie in a modern gym wearing matching sports bra and leggings, holding phone", "stretching on a yoga mat at sunrise by a window, athletic wear", "resting between sets on a bench, towel around neck, gym lighting", "post-workout selfie in cropped zip hoodie and biker shorts, glowing skin"]
@@ -22,3 +23,4 @@ scenes:
   lifestyle: ["sitting in a sunny café in a fitted crop top and high-waist jeans with iced coffee", "holding a green smoothie in a bright kitchen, activewear, morning light", "on a city street in oversized blazer and bike shorts, golden hour"]
   salida_noche: ["in a fitted black mini dress at a rooftop bar, city lights, playful look at camera", "getting ready in front of a mirror, satin slip dress, warm bedroom lighting"]
   behind_the_ai: ["laptop screen showing a ComfyUI node graph, desk with coffee, lifestyle photo"]
+  sin_cara: ["from behind walking on the beach at sunset in a stylish bikini, long wavy hair, glancing over her shoulder", "back view standing at a gym mirror in a sports bra and high-waist leggings, athletic toned back", "low angle from behind in a yoga pose on a mat, fitted activewear, sunrise light", "torso and waist in a cropped top and low-rise jeans at golden hour, face out of frame", "legs and sandals by a rooftop pool in a summer swimsuit, bright sun", "silhouette at the beach in a one-piece swimsuit, sunset backlight", "from behind on a city balcony in a fitted mini dress, night lights, looking over her shoulder"]
