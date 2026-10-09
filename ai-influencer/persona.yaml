@@ -6,10 +6,11 @@ niche: fitness y lifestyle
 disclosure_caption: "✨ Imagen generada con IA · Virtual creator"
 base_hashtags: ["#aiinfluencer", "#virtualcreator", "#aigenerated", "#fitnessinspo", "#lifestyle"]
 # Descripción fija del personaje (úsala igual en TODOS los prompts + tu LoRA)
-character: "lia_character, 26 year old woman, long wavy chestnut hair, hazel eyes, light freckles, athletic toned body, confident smile"
-# Tono: seguro y coqueto, estilo sportswear/swimwear de revista. Nada explícito ni desnudos
+character: "lia_character, 26 year old woman, long wavy copper auburn hair, hazel eyes, clear natural skin, curvy hourglass figure, natural proportions, warm smile"
+# Mujer normal y realista: figura definida (pecho y cadera) con proporciones naturales, sin exagerar; pelo cobrizo; sin pecas.
+# Tono: seguro y coqueto. Nada explícito ni desnudos
 # (Instagram lo penaliza y puede cerrar la cuenta).
-negative: "nudity, nsfw, deformed hands, extra fingers, bad anatomy, bad teeth, deformed face, blurry, watermark, text, logo, brand logo, nike, adidas, swoosh, plastic skin, lowres, (worst quality, low quality:1.4), deformed iris, deformed pupils, asymmetrical eyes, cross-eyed, uncanny, ugly, bad proportions"
+negative: "nsfw, nudity, freckles, moles, deformed hands, extra fingers, bad anatomy, bad teeth, deformed face, blurry, watermark, text, plastic skin, airbrushed, lowres, deformed iris, deformed pupils, uncanny, ugly, exaggerated proportions, huge breasts, disproportionate body"
 pillars:
   - {name: gym, weight: 4}
   - {name: playa_sol, weight: 3}

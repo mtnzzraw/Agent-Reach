@@ -14,22 +14,24 @@ con SDXL realista salen caras mucho mejores que con SD 1.5. Necesitas solo una c
 2. **Entorno de ejecución → Cambiar tipo de entorno → GPU T4 → Guardar.**
 3. **Entorno de ejecución → Ejecutar todo.** La primera vez pide permiso para tu Drive: acepta.
 
-## Paso 1 — Caras candidatas (`1_candidatas.ipynb`)
-- Genera 60 retratos y los guarda en `Mi unidad/lia/candidatas/` (más unas `hoja_XX.jpg` para verlas de golpe).
-- ✅ Abre esa carpeta en Drive y mira las fotos.
+## Paso 1 — Candidatas: cara y cuerpo (`1_candidatas.ipynb`)
+- Genera 60 imágenes de Lía (mujer normal, pelo cobrizo, sin pecas, figura definida pero natural): 20 retratos,
+  24 de cintura para arriba y 16 de rodillas / cuerpo entero. Se guardan en `Mi unidad/lia2/candidatas/` (más `hoja_XX.jpg`).
+- Todo va en la carpeta nueva `lia2`: la carpeta anterior `lia` (otra cara, con pecas) no se toca ni hace falta borrarla.
 
-## Paso 2 — Elegir la cara
-- Ya hay una selección de 29 fotos preparada en `2_entrenar_lora.ipynb` (lista `ELEGIDAS`): se copian solas a `lia/dataset`.
-- Si quieres cambiar cuáles, edita esa lista con los números de `cara_XX.png`. Mínimo 10, ideal 20–30, con variedad de ropa y fondo.
+## Paso 2 — Elegir (cara y cuerpo coherentes)
+- Mira las `hoja_XX.jpg` (o súbelas al chat de Claude) y elige **20–30 imágenes donde cara y cuerpo se parezcan**,
+  mezclando retratos, cintura para arriba y cuerpo entero. Apunta los números de `img_XX.png`.
+- Ponlos en la lista `ELEGIDAS` de `2_entrenar_lora.ipynb`: se copian solos a `lia2/dataset`.
 
 ## Paso 3 — Entrenar el LoRA (`2_entrenar_lora.ipynb`)
-- Aprende la cara de tu carpeta `lia/dataset`. Resultado en `lia/lora/pytorch_lora_weights.safetensors`.
+- Aprende cara **y cuerpo** de `lia2/dataset`. Resultado en `lia2/lora/pytorch_lora_weights.safetensors`.
 - ✅ La última celda dice "OK, LoRA guardado".
 
 ## Paso 4 — Generar las fotos (`3_generar.ipynb`)
-- Genera las publicaciones del plan de 30 días con la cara de Lía. Cambia `DESDE, HASTA` para hacerlo por tandas.
-- Salen en `lia/salida_iphone/` (estilo foto de móvil) con un `captions.csv` (texto con el aviso de IA).
-- **Revisa cada imagen a mano** (manos, cara, texto raro) y descarta las malas.
+- Genera las publicaciones del plan de 30 días con estilo de foto de móvil (selfies, fotos casuales). Cambia `DESDE, HASTA` para hacerlo por tandas.
+- Salen en `lia2/salida_iphone/` con un `captions.csv` (texto con el aviso de IA). Los selfies de espejo piden el iPhone con su logo.
+- **Revisa cada imagen a mano** (manos, cara, proporciones, texto raro) y descarta las malas.
 
 ## Paso 5 — Instagram
 - Cuenta **Creator/Business**, con "IA" en la bio y la etiqueta "AI info" en cada publicación.
