@@ -29,7 +29,8 @@ for d in ('candidatas', 'dataset', 'lora', 'salida'):
 import torch; print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NINGUNA -> Entorno de ejecución > Cambiar tipo > GPU T4')
 ''')
 # diffusers 0.41.0 es la versión probada con el transformers 5.x de Colab (0.31 daba "cannot import FLAX_WEIGHTS_NAME").
-INSTALL = code("!pip install -q diffusers==0.41.0 transformers accelerate peft safetensors")
+# Colab trae una torchao antigua que rompe el import de diffusers 0.41 (cannot import name 'FqnToConfig'); no la usamos.
+INSTALL = code("!pip uninstall -y -q torchao\n!pip install -q diffusers==0.41.0 transformers accelerate peft safetensors")
 LOAD = '''
 import torch
 from diffusers import StableDiffusionXLPipeline, DPMSolverMultistepScheduler
