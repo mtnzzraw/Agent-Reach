@@ -87,11 +87,20 @@ print('Hojas creadas en', f'{BASE}/candidatas')
 n2 = nb([
  md('''
 # 2 · Entrenar el LoRA de Lía (SDXL)
-Antes: mueve a `Mi unidad/lia/dataset` las **20–30 imágenes** donde se vea la misma cara (desde `lia/candidatas`).
+La primera celda copia a `lia/dataset` las fotos elegidas (lista `ELEGIDAS`); edítala si quieres otra selección.
 **GPU T4.** Tiempo aproximado: 1 h (estimado, no medido). Si Colab corta la sesión, vuelve a ejecutar:
 el resultado final queda en `lia/lora`.
 '''),
  SETUP, INSTALL,
+ code('''
+# Fotos elegidas de lia/candidatas (números de cara_XX.png). Edita la lista si quieres cambiar la selección.
+# Se copian solas a lia/dataset: no hace falta moverlas a mano.
+ELEGIDAS = [1, 2, 4, 8, 9, 11, 14, 16, 17, 20, 21, 24, 25, 27, 30, 31, 32, 38, 40, 42, 45, 46, 47, 48, 50, 53, 54, 58, 59]
+import shutil
+for n in ELEGIDAS:
+    shutil.copy(f'{BASE}/candidatas/cara_{n:02d}.png', f'{BASE}/dataset/')
+print(len(ELEGIDAS), 'fotos copiadas a lia/dataset')
+'''),
  code('''
 !pip install -q bitsandbytes
 !wget -q -O train_dreambooth_lora_sdxl.py https://raw.githubusercontent.com/huggingface/diffusers/v0.41.0/examples/dreambooth/train_dreambooth_lora_sdxl.py

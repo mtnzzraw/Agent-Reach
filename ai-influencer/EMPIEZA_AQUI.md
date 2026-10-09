@@ -19,9 +19,8 @@ con SDXL realista salen caras mucho mejores que con SD 1.5. Necesitas solo una c
 - ✅ Abre esa carpeta en Drive y mira las fotos.
 
 ## Paso 2 — Elegir la cara
-- Elige **20–30 fotos donde se vea la misma persona** y **muévelas** a `Mi unidad/lia/dataset/`.
-- Si quieres ayuda para elegir, sube las `hoja_XX.jpg` al chat de Claude.
-- Si ninguna se parece, repite el paso 1 (o dime y cambio la semilla).
+- Ya hay una selección de 29 fotos preparada en `2_entrenar_lora.ipynb` (lista `ELEGIDAS`): se copian solas a `lia/dataset`.
+- Si quieres cambiar cuáles, edita esa lista con los números de `cara_XX.png`. Mínimo 10, ideal 20–30, con variedad de ropa y fondo.
 
 ## Paso 3 — Entrenar el LoRA (`2_entrenar_lora.ipynb`)
 - Aprende la cara de tu carpeta `lia/dataset`. Resultado en `lia/lora/pytorch_lora_weights.safetensors`.
