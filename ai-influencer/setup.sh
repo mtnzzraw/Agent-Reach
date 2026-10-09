@@ -1,8 +1,21 @@
 #!/usr/bin/env bash
 # Instala ComfyUI y deja el pipeline listo. Mac Apple Silicon (MPS) o PC con GPU NVIDIA. Uso: bash setup.sh
 set -e
+# ComfyUI necesita Python >= 3.10 (el python3 3.9 de macOS no sirve)
+PY=""
+for c in python3.13 python3.12 python3.11 python3.10; do
+  if command -v "$c" >/dev/null 2>&1; then PY="$c"; break; fi
+done
+if [ -z "$PY" ]; then
+  echo "ERROR: no encuentro Python 3.10 o superior."
+  echo "Instala Python 3.12 desde https://www.python.org/downloads/macos/ (instalador .pkg), cierra y abre la Terminal y repite."
+  exit 1
+fi
+echo "Usando $PY ($($PY --version))"
 git clone https://github.com/comfyanonymous/ComfyUI ../ComfyUI 2>/dev/null || true
-python3 -m venv ../ComfyUI/venv && source ../ComfyUI/venv/bin/activate
+rm -rf ../ComfyUI/venv   # recrea el entorno por si se creó con un Python antiguo
+"$PY" -m venv ../ComfyUI/venv && source ../ComfyUI/venv/bin/activate
+pip install -q --upgrade pip
 if [ "$(uname -s)" = "Darwin" ]; then
   pip install -q torch torchvision            # build de PyTorch con soporte MPS (Apple Silicon)
   RUN="python main.py --force-fp16 --use-split-cross-attention --lowvram"
