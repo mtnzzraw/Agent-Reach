@@ -16,6 +16,7 @@ pillars:
   - {name: playa_sol, weight: 3}
   - {name: lifestyle, weight: 3}
   - {name: salida_noche, weight: 2}
+  - {name: selfie_espejo, weight: 6}   # estilo referencia: selfies de espejo caseros, a menudo con el móvil tapando la cara
   - {name: sin_cara, weight: 4}   # fotos de espaldas/cuerpo/detalle: la cara no tiene que salir
   - {name: behind_the_ai, weight: 1}   # contenido sobre cómo se hace: genera confianza y comunidad
 scenes:
@@ -25,3 +26,4 @@ scenes:
   salida_noche: ["in a fitted black mini dress at a rooftop bar, city lights, playful look at camera", "mirror selfie getting ready, satin slip dress, warm bedroom lighting, holding phone"]
   behind_the_ai: ["laptop screen showing a ComfyUI node graph, desk with coffee, lifestyle photo"]
   sin_cara: ["from behind walking on the beach at sunset in a stylish bikini, long wavy hair, glancing over her shoulder", "back view standing at a gym mirror in a sports bra and high-waist leggings, athletic toned back", "low angle from behind in a yoga pose on a mat, fitted activewear, sunrise light", "torso and waist in a cropped top and low-rise jeans at golden hour, face out of frame", "legs and sandals by a rooftop pool in a summer swimsuit, bright sun", "silhouette at the beach in a one-piece swimsuit, sunset backlight", "from behind on a city balcony in a fitted mini dress, night lights, looking over her shoulder"]
+  selfie_espejo: ["mirror selfie in a small tiled bathroom, harsh ceiling lights, phone covering her face, fitted black crop top and floral skirt, cables and outlets on the wall", "mirror selfie in front of a round vintage mirror, white fitted crop top and light blue jeans, phone in front of her face, one hand posing", "mirror selfie with camera flash glare, blue windbreaker jacket over a black top, phone covering her face, plain wall with coat hooks", "mirror selfie against a plain grey wall, white fitted tank top and high-waist jeans, phone with a colorful case covering half her face", "dark low-light mirror selfie at night, black hoodie and crop top, phone covering her face, grainy", "seen from behind in a tiled bathroom, fitted black crop top and floral skirt, holding phone up to the mirror, ceiling spotlights", "sitting on an outdoor cafe sofa holding an iced coffee, blue varsity jacket, ripped jeans, white sneakers, hand covering part of her face"]

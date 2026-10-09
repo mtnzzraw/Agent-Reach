@@ -15,8 +15,8 @@ con SDXL realista salen caras mucho mejores que con SD 1.5. Necesitas solo una c
 3. **Entorno de ejecución → Ejecutar todo.** La primera vez pide permiso para tu Drive: acepta.
 
 ## Paso 1 — Candidatas: cara y cuerpo (`1_candidatas.ipynb`)
-- Genera 60 imágenes de Lía (mujer normal, pelo cobrizo, sin pecas, figura definida pero natural): 20 retratos,
-  24 de cintura para arriba y 16 de rodillas / cuerpo entero. Se guardan en `Mi unidad/lia2/candidatas/` (más `hoja_XX.jpg`).
+- Genera 100 imágenes estilo foto casera de móvil de Lía (mujer normal, pelo cobrizo, sin pecas, figura definida pero natural):
+  25 selfies, 35 de espejo y 40 de cuerpo. Se guardan en `Mi unidad/lia2/candidatas/` (más `hoja_XX.jpg`). Unos 1–1,5 h (estimado).
 - Todo va en la carpeta nueva `lia2`: la carpeta anterior `lia` (otra cara, con pecas) no se toca ni hace falta borrarla.
 
 ## Paso 2 — Elegir (cara y cuerpo coherentes)
@@ -31,6 +31,7 @@ con SDXL realista salen caras mucho mejores que con SD 1.5. Necesitas solo una c
 ## Paso 4 — Generar las fotos (`3_generar.ipynb`)
 - Genera las publicaciones del plan de 30 días con estilo de foto de móvil (selfies, fotos casuales). Cambia `DESDE, HASTA` para hacerlo por tandas.
 - Salen en `lia2/salida_iphone/` con un `captions.csv` (texto con el aviso de IA). Los selfies de espejo piden el iPhone con su logo.
+- Última celda (opcional): crea `salida_iphone/movil/*.jpg` con grano y compresión de móvil. Solo estética, sin metadatos falsos.
 - **Revisa cada imagen a mano** (manos, cara, proporciones, texto raro) y descarta las malas.
 
 ## Paso 5 — Instagram

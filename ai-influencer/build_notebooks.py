@@ -7,41 +7,46 @@ P = yaml.safe_load(open("persona.yaml"))
 DRIVE_DIR = "lia2"   # carpeta nueva en Drive (la anterior, "lia", tenía otra cara con pecas)
 
 # Los prompts de SDXL se truncan a 77 tokens: lo importante va primero y sin sintaxis de pesos "(x:1.4)".
-CHAR = ("26 year old ordinary woman, long wavy copper auburn hair, hazel eyes, clear natural skin, minimal makeup, "
-        "curvy hourglass figure, natural proportions")
-STYLE_DS = "candid photo, natural light, detailed skin texture with pores, sharp focus"   # sin 85mm/bokeh: menos "look de estudio"
+CHAR = ("26 year old ordinary woman, long wavy copper auburn hair, hazel eyes, clear natural skin, curvy hourglass figure")
+# Estilo "foto casera de móvil" (referencias: selfies de espejo en baños y dormitorios, flash, fondos cotidianos).
+STYLE_DS = "amateur phone photo, candid, natural skin texture with pores, imperfect framing"
 NEGATIVE_DS = ("nsfw, nudity, freckles, moles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, extra fingers, blurry, "
-               "watermark, text, plastic skin, airbrushed, exaggerated proportions, huge breasts, disproportionate body, cartoon, 3d render")
+               "watermark, text, plastic skin, airbrushed, professional photography, studio lighting, exaggerated proportions, "
+               "huge breasts, disproportionate body, cartoon, 3d render")
 
-# Estilo "foto de móvil" para las publicaciones. Solo estética: no se añaden metadatos falsos de cámara;
-# las fotos siguen siendo IA y se publican etiquetadas como tal. Se permiten logos reales (p. ej. la manzana del iPhone).
-STYLE3 = "candid iPhone 16 Pro photo, unedited snapshot, natural light, sharp focus, social media post"
+# Estilo para las publicaciones. Solo estética: no se añaden metadatos falsos de cámara; las fotos siguen siendo IA
+# y se publican etiquetadas como tal. Se permiten logos reales (p. ej. la manzana del iPhone).
+STYLE3 = "amateur iPhone photo, candid, unedited, slight grain, imperfect framing"
 NEGATIVE3 = ("nsfw, nudity, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, extra fingers, blurry, watermark, "
              "plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, professional photography, "
-             "bokeh, retouched, airbrushed, HDR, cinematic")
+             "bokeh, retouched, airbrushed, HDR, cinematic, perfect")
 
-# --- 60 candidatas, todas cuadradas 1024x1024: 20 retratos, 24 de cintura para arriba, 16 de rodillas/cuerpo entero ---
-portrait = ["front-facing portrait, looking at camera, soft smile", "front-facing portrait, calm expression, looking at camera",
-            "three-quarter view portrait, looking at camera", "head and shoulders portrait, laughing, looking at camera",
-            "close-up face portrait, looking at camera", "head and shoulders portrait, hair over one shoulder, looking at camera"]
-waist = ["from the waist up, fitted sports bra and high-waist leggings, looking at camera",
-         "from the waist up, fitted white tank top and jeans, looking at camera",
-         "from the waist up, fitted crop top, hand in hair, smiling",
-         "from the waist up, fitted summer dress, smiling at camera",
-         "three-quarter view from the waist up, fitted knit top",
-         "from the waist up, oversized blazer over a fitted top, looking at camera"]
-body = ["body shot from the knees up, leggings and fitted top, standing, relaxed pose",
-        "full body, standing on a sunny street, fitted top and jeans, relaxed pose",
-        "full body, walking in a fitted summer dress",
+# --- 100 candidatas 1024x1024, TODAS con la cara visible (el LoRA aprende cara y cuerpo): 25 selfies, 35 de espejo, 40 de cuerpo ---
+selfie = ["front camera selfie, close-up face, looking at camera", "front camera selfie, slight smile, head and shoulders",
+          "selfie from slightly above, looking up at camera", "front camera selfie, laughing, messy hair",
+          "selfie, head tilted, relaxed expression"]
+selfie_bg = ["bedroom", "small tiled bathroom", "car interior", "cafe", "street", "plain wall"]
+mirror = ["mirror selfie from the waist up, holding phone at chest height, face visible, fitted black crop top",
+          "mirror selfie from the waist up, face visible, white fitted tank top and light blue jeans",
+          "mirror selfie from the waist up, face visible, blue windbreaker over a black top",
+          "mirror selfie from the waist up, face visible, fitted hoodie and high-waist jeans",
+          "gym mirror selfie from the waist up, fitted sports bra and leggings, face visible",
+          "mirror selfie from the waist up, fitted summer dress, smiling"]
+mirror_bg = ["small tiled bathroom", "bedroom with a round vintage mirror", "plain wall", "bedroom"]
+body = ["full-length mirror selfie, face visible, fitted top and light blue jeans, bedroom",
+        "full-length mirror selfie, face visible, black crop top and floral skirt, tiled bathroom",
+        "full body, sitting on an outdoor cafe sofa with an iced coffee, varsity jacket, ripped jeans, white sneakers",
+        "full body, standing against a plain wall, fitted tank top and jeans, relaxed pose",
+        "full body, walking on a sunny street, fitted top and jeans",
         "full body, sports bra and leggings in a gym, relaxed pose",
         "full body, one-piece swimsuit on a beach, relaxed pose",
-        "body shot from the knees up, casual hoodie and bike shorts, standing"]
-bgs = ["plain light wall", "sunny street", "modern gym", "bright cafe", "beach", "bright apartment"]
-lights = ["soft window light", "golden hour sunlight", "overcast daylight", "warm indoor light"]
+        "full body, oversized blazer and bike shorts on a street, relaxed pose"]
+lights = ["harsh ceiling lights", "camera flash at night", "soft window light", "overcast daylight", "warm indoor light"]
 rnd = random.Random(11)
-def combos(shots, n):
+def combos(shots, bgs, n):
     c = list(itertools.product(shots, bgs, lights)); rnd.shuffle(c); return c[:n]
-CANDIDATES = [f"{CHAR}, {s}, {l}, {b}" for s, b, l in combos(portrait, 20) + combos(waist, 24) + combos(body, 16)]
+CANDIDATES = ([f"{CHAR}, {s}, {b}, {l}" for s, b, l in combos(selfie, selfie_bg, 25) + combos(mirror, mirror_bg, 35)]
+              + [f"{CHAR}, {s}, {l}" for s, _, l in combos(body, [""], 40)])
 
 plan = [{"pillar": x["pillar"], "prompt": f"photo of lia_character woman, {x['scene']}", "caption": x["caption"]} for x in make_plan(30)]
 
@@ -73,13 +78,13 @@ pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config, 
 # ---------- 1: candidatas ----------
 n1 = nb([
  md('''
-# 1 · Candidatas de Lía: cara y cuerpo (SDXL realista)
+# 1 · Candidatas de Lía: cara y cuerpo (SDXL, estilo foto de móvil)
 **Colab → Entorno de ejecución → Cambiar tipo de entorno → GPU T4.** Ejecuta las celdas en orden.
 
-Genera 60 imágenes de una mujer normal, con pelo cobrizo, sin pecas y con figura definida pero natural:
-20 retratos, 24 de cintura para arriba y 16 de rodillas / cuerpo entero (así el LoRA aprende **cara y cuerpo** juntos).
+Genera 100 imágenes estilo foto casera de móvil (selfies, espejos, cuerpo entero) de una mujer normal, con pelo cobrizo,
+sin pecas y con figura definida pero natural: 25 selfies, 35 de espejo y 40 de cuerpo (así el LoRA aprende **cara y cuerpo** juntos).
 Se guardan en tu Google Drive, carpeta `lia2/candidatas`. Luego eliges las 20–30 donde **cara y cuerpo se parezcan**.
-Tiempo aproximado: 40–50 min (estimado, no medido). Se puede parar y repetir: salta las que ya existen.
+Tiempo aproximado: 1 h–1 h 20 min (estimado, no medido). Se puede parar y repetir: salta las que ya existen.
 La cuenta final se publica siempre **etiquetada como IA**.
 '''),
  SETUP, INSTALL,
@@ -165,7 +170,7 @@ n3 = nb([
 # 3 · Generar las fotos de Lía (SDXL + su LoRA), estilo foto de móvil
 Usa el LoRA de `lia2/lora`. Genera las publicaciones del plan de 30 días con estilo de selfie / foto casual y las guarda en
 `lia2/salida_iphone` junto a `captions.csv` (texto con el aviso de IA). Cambia `DESDE` y `HASTA` para hacerlo por tandas.
-Los selfies de espejo piden el iPhone con su logo visible (la IA no siempre lo dibuja bien: se descartan las que salgan mal).
+Los selfies de espejo piden el iPhone con su logo visible y el móvil tapando la cara (la IA no siempre lo dibuja bien: se descartan las que salgan mal).
 **GPU T4.** Aproximadamente 1 min por imagen (estimado). **Revisa cada imagen a mano** (manos, cara, proporciones, texto raro)
 y publica siempre con la etiqueta de IA.
 '''),
@@ -186,7 +191,7 @@ for n in range(DESDE, HASTA + 1):
     seed = random.randint(0, 2**31)
     g = torch.Generator('cuda').manual_seed(seed)
     if 'mirror selfie' in it['prompt']:
-        cam = 'mirror selfie holding an iPhone 16 Pro, back of the phone with Apple logo and camera lenses visible'
+        cam = 'mirror selfie, iPhone 16 Pro with Apple logo visible on its back, flash glare'
     elif 'selfie' in it['prompt']:
         cam = 'front camera selfie at arm length, wide angle, slightly imperfect framing'
     else:
@@ -198,6 +203,25 @@ for n in range(DESDE, HASTA + 1):
     with open(cap, 'a', newline='', encoding='utf-8') as fh:
         csv.writer(fh).writerow([n, it['pillar'], os.path.basename(f), it['caption']])
     print(n, it['pillar'], 'seed', seed, flush=True)
+'''),
+ md("## Efecto «foto de móvil» (opcional)\nCopia cada imagen de `salida_iphone` a `salida_iphone/movil/*.jpg` con grano de sensor, un poco menos de nitidez, viñeteo suave y compresión JPEG, como una foto subida desde el móvil. "
+    "Solo cambia la estética: **no** añade metadatos falsos de cámara. Las originales se conservan."),
+ code('''
+import glob, numpy as np
+from PIL import Image, ImageFilter, ImageEnhance
+os.makedirs(f'{BASE}/{OUT}/movil', exist_ok=True)
+def efecto_movil(img, seed):
+    rng = np.random.default_rng(seed)
+    im = img.convert('RGB').filter(ImageFilter.GaussianBlur(0.6))
+    a = np.asarray(im).astype(np.float32) + rng.normal(0, 3.5, (im.size[1], im.size[0], 3))
+    h, w = a.shape[:2]; yy, xx = np.mgrid[0:h, 0:w]
+    a *= (1 - 0.10 * (((xx - w / 2) / (w / 2)) ** 2 + ((yy - h / 2) / (h / 2)) ** 2))[..., None]
+    return ImageEnhance.Contrast(Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))).enhance(1.05)
+for f in sorted(glob.glob(f'{BASE}/{OUT}/*.png')):
+    out = f'{BASE}/{OUT}/movil/' + os.path.basename(f)[:-4] + '.jpg'
+    if not os.path.exists(out):
+        efecto_movil(Image.open(f), abs(hash(f)) % 2**32).save(out, quality=82)
+print('Listo: lia2/' + OUT + '/movil')
 '''),
 ])
 
