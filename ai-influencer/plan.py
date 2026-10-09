@@ -11,6 +11,8 @@ def make_plan(days=30, per_day=1, start=None, seed=1):
         for k in range(per_day):
             pil = rnd.choice(pillars)
             scene = rnd.choice(p["scenes"][pil])
+            for key, val in p.get("home", {}).items():   # la misma casa en todas las escenas
+                scene = scene.replace("{" + key + "}", val)
             when = dt.datetime.combine(start + dt.timedelta(days=d), dt.time(18 + k * 2, 0))
             items.append({
                 "date": when.isoformat(), "pillar": pil, "scene": scene,

@@ -16,10 +16,10 @@ NEGATIVE_DS = ("nsfw, nudity, freckles, moles, deformed, bad anatomy, deformed i
 
 # Estilo para las publicaciones. Solo estética: no se añaden metadatos falsos de cámara; las fotos siguen siendo IA
 # y se publican etiquetadas como tal. Se permiten logos reales (p. ej. la manzana del iPhone).
-STYLE3 = "amateur iPhone photo, candid, unedited, slight grain"
-NEGATIVE3 = ("nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, extra fingers, "
-             "blurry, plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, "
-             "professional photography, bokeh, retouched, deformed phone, phone without camera lenses")
+STYLE3 = "amateur iPhone photo, candid, unedited, slight grain, imperfect framing"
+NEGATIVE3 = ("nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, "
+             "extra fingers, blurry, watermark, plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, "
+             "professional photography, bokeh, retouched, airbrushed, HDR, cinematic, deformed phone, phone without camera lenses")
 
 # --- 100 candidatas 1024x1024, TODAS con la cara visible (el LoRA aprende cara y cuerpo): 25 selfies, 35 de espejo, 40 de cuerpo ---
 selfie = ["front camera selfie, close-up face, looking at camera", "front camera selfie, slight smile, head and shoulders",
@@ -66,7 +66,7 @@ import torch; print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_avail
 ''')
 # Colab trae una torchao antigua que rompe el import de diffusers 0.41 (cannot import name 'FqnToConfig'); no la usamos.
 # diffusers 0.41.0 es la versión probada con el transformers 5.x de Colab.
-INSTALL = code("!pip uninstall -y -q torchao\n!pip install -q diffusers==0.41.0 transformers accelerate peft safetensors")
+INSTALL = code("!pip uninstall -y -q torchao\n!pip install -q diffusers==0.41.0 transformers accelerate peft safetensors compel")
 LOAD = '''
 import torch
 from diffusers import StableDiffusionXLPipeline, DPMSolverMultistepScheduler
@@ -164,6 +164,19 @@ print('OK, LoRA guardado:' if os.path.exists(f) else 'NO se creó el LoRA, revis
 '''),
 ])
 
+# Prompts largos: SDXL lee 77 tokens por trozo; compel parte el texto en trozos y los junta (probado con diffusers 0.41).
+COMPEL = '''
+from compel import Compel, ReturnedEmbeddingsType
+compel = Compel(tokenizer=[pipe.tokenizer, pipe.tokenizer_2], text_encoder=[pipe.text_encoder, pipe.text_encoder_2],
+                returned_embeddings_type=ReturnedEmbeddingsType.PENULTIMATE_HIDDEN_STATES_NON_NORMALIZED,
+                requires_pooled=[False, True], truncate_long_prompts=False)
+def codificar(prompt, negative):
+    # los guiones se quitan porque compel los usaría como símbolo de peso (p. ej. "white-tiled")
+    cond, pooled = compel(prompt.replace('-', ' ')); ncond, npooled = compel(negative.replace('-', ' '))
+    cond, ncond = compel.pad_conditioning_tensors_to_same_length([cond, ncond])
+    return dict(prompt_embeds=cond, pooled_prompt_embeds=pooled, negative_prompt_embeds=ncond, negative_pooled_prompt_embeds=npooled)
+'''
+
 # ---------- 3: generar ----------
 n3 = nb([
  md(f'''
@@ -176,7 +189,7 @@ y publica siempre con la etiqueta de IA.
 '''),
  SETUP, INSTALL,
  code(f"STYLE = {STYLE3!r}\nNEGATIVE = {NEGATIVE3!r}\nOUT = 'salida_iphone'\nPLAN = {json.dumps(plan, ensure_ascii=False, indent=1)}\nDESDE, HASTA = 1, 10     # días del plan a generar\n"),
- code(LOAD + '''
+ code(LOAD + COMPEL + '''
 pipe.load_lora_weights(f'{BASE}/lora', weight_name='pytorch_lora_weights.safetensors')
 import csv, os, random
 os.makedirs(f'{BASE}/{OUT}', exist_ok=True)
@@ -193,10 +206,10 @@ for n in range(DESDE, HASTA + 1):
     seed = random.randint(0, 2**31)
     g = torch.Generator('cuda').manual_seed(seed)
     if 'mirror photo' in it['prompt']:
-        cam = 'photo taken in a mirror, iPhone 16 Pro in a black case, three camera lenses and Apple logo on its back'
+        cam = 'mirror photo, iPhone 16 Pro in a black case with three camera lenses and the Apple logo on its back'
     else:
         cam = 'shot on a phone, casual framing'
-    img = pipe(prompt=f'{STYLE}, {cam}, {it["prompt"]}', negative_prompt=NEGATIVE, width=832, height=1216,
+    img = pipe(**codificar(f'{STYLE}, {cam}, {it["prompt"]}', NEGATIVE), width=832, height=1216,
                num_inference_steps=30, guidance_scale=4.5, generator=g,
                cross_attention_kwargs={'scale': 0.9}).images[0]
     img.save(f)
