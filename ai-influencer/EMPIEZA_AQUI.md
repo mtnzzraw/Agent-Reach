@@ -43,4 +43,6 @@ con SDXL realista salen caras mucho mejores que con SD 1.5. Necesitas solo una c
 pero las caras salen peores. Útil solo para pruebas rápidas.
 
 ## Si algo falla
+- Error `cannot import name 'FLAX_WEIGHTS_NAME'` o similar: es de versiones. Vuelve a abrir el cuaderno desde el enlace (versión nueva),
+  y en Colab: **Entorno de ejecución → Reiniciar sesión y ejecutar todo**.
 Copia el mensaje de error completo y pídele ayuda a Claude.

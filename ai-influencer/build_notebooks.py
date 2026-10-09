@@ -28,7 +28,8 @@ for d in ('candidatas', 'dataset', 'lora', 'salida'):
     os.makedirs(f'{BASE}/{d}', exist_ok=True)
 import torch; print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NINGUNA -> Entorno de ejecución > Cambiar tipo > GPU T4')
 ''')
-INSTALL = code("!pip install -q diffusers==0.31.0 transformers accelerate peft safetensors")
+# diffusers 0.41.0 es la versión probada con el transformers 5.x de Colab (0.31 daba "cannot import FLAX_WEIGHTS_NAME").
+INSTALL = code("!pip install -q diffusers==0.41.0 transformers accelerate peft safetensors")
 LOAD = '''
 import torch
 from diffusers import StableDiffusionXLPipeline, DPMSolverMultistepScheduler
@@ -92,7 +93,7 @@ el resultado final queda en `lia/lora`.
  SETUP, INSTALL,
  code('''
 !pip install -q bitsandbytes
-!wget -q -O train_dreambooth_lora_sdxl.py https://raw.githubusercontent.com/huggingface/diffusers/v0.31.0/examples/dreambooth/train_dreambooth_lora_sdxl.py
+!wget -q -O train_dreambooth_lora_sdxl.py https://raw.githubusercontent.com/huggingface/diffusers/v0.41.0/examples/dreambooth/train_dreambooth_lora_sdxl.py
 import glob
 n = len(glob.glob(f'{BASE}/dataset/*.png') + glob.glob(f'{BASE}/dataset/*.jpg'))
 print(n, 'imágenes en el dataset')
