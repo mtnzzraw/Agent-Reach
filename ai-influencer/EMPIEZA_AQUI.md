@@ -19,7 +19,7 @@ Cada paso dice cuánto tarda y qué comprobar antes de seguir.
 
 ## 2. Crear la cara de Lía (1–2 horas)
 1. Genera las 30 imágenes: `python gen_dataset.py` (unos 45 min en tu Mac; se puede parar y reanudar). Salen en `dataset/`.
-2. Quédate con **15–30 imágenes donde se vea la misma cara**. Borra las que no se parezcan.
+2. Ejecuta `python contact_sheet.py` (junta las fotos en `dataset/hoja_01.jpg`…) y súbeselas a Claude para elegir. Quédate con **15–30 imágenes donde se vea la misma cara**. Borra las que no se parezcan.
 3. ✅ Comprobación: si pones todas juntas, parece la misma persona.
 
 ## 3. Entrenar el LoRA gratis (1–2 horas)
