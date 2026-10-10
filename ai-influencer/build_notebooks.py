@@ -172,6 +172,10 @@ assert n >= 10, 'Pon en ELEGIDAS los números de tus mejores imágenes (mínimo 
 import os
 f = f'{BASE}/lora/pytorch_lora_weights.safetensors'
 print('OK, LoRA guardado:' if os.path.exists(f) else 'NO se creó el LoRA, revisa los errores de arriba:', f)
+if os.path.exists(f):   # los checkpoint intermedios ya no hacen falta (ocupan espacio y se confundirían con el LoRA final)
+    import shutil
+    for d in glob.glob(f'{BASE}/lora/checkpoint-*'):
+        shutil.rmtree(d, ignore_errors=True)
 if PLATAFORMA == 'kaggle':
     print('Kaggle: pulsa "Save Version" > "Save & Run All". El LoRA queda en la pestaña Output; en el cuaderno 3 añádelo con Add Data > Notebook Output.')
 '''),
@@ -205,7 +209,7 @@ y publica siempre con la etiqueta de IA.
  code(LOAD + COMPEL + '''
 lora_dir = f'{BASE}/lora'
 if not os.path.exists(f'{lora_dir}/pytorch_lora_weights.safetensors'):   # Kaggle: viene como Input (salida del cuaderno 2)
-    hallado = glob.glob('/kaggle/input/**/pytorch_lora_weights.safetensors', recursive=True)
+    hallado = sorted(glob.glob('/kaggle/input/**/pytorch_lora_weights.safetensors', recursive=True), key=lambda p: ('checkpoint' in p, len(p)))   # el final, no los checkpoint intermedios
     assert hallado, 'No encuentro el LoRA: en Kaggle añade la salida del cuaderno 2 con Add Data > Notebook Output'
     lora_dir = os.path.dirname(hallado[0])
 pipe.load_lora_weights(lora_dir, weight_name='pytorch_lora_weights.safetensors')
