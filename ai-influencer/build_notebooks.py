@@ -143,9 +143,10 @@ if PLATAFORMA == 'kaggle':   # las fotos elegidas se suben como Dataset de Kaggl
         shutil.copy(f, f'{BASE}/dataset/')
     print(len(fotos), 'fotos copiadas desde tu Dataset de Kaggle')
 else:
+    shutil.rmtree(f'{BASE}/dataset', ignore_errors=True); os.makedirs(f'{BASE}/dataset')   # solo las elegidas: borra restos de selecciones anteriores
     for n in ELEGIDAS:
         shutil.copy(f'{BASE}/candidatas/img_{n:02d}.png', f'{BASE}/dataset/')
-    print(len(ELEGIDAS), 'fotos copiadas a lia2/dataset')
+    print(len(ELEGIDAS), 'fotos copiadas a lia2/dataset (la carpeta contiene solo esas)')
 '''),
  code('''
 !pip install -q bitsandbytes
