@@ -217,7 +217,7 @@ pipe.load_lora_weights(lora_dir, weight_name='pytorch_lora_weights.safetensors')
 from diffusers import StableDiffusionXLImg2ImgPipeline
 from PIL import Image
 refinar = StableDiffusionXLImg2ImgPipeline(**pipe.components)   # comparte modelo y LoRA: no gasta más memoria
-pipe.enable_vae_tiling(); refinar.enable_vae_tiling()
+pipe.vae.enable_tiling()   # el VAE se comparte con refinar
 import csv, os, random
 os.makedirs(f'{BASE}/{OUT}', exist_ok=True)
 cap = f'{BASE}/{OUT}/captions.csv'
