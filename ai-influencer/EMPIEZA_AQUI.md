@@ -40,6 +40,18 @@ con SDXL realista salen caras mucho mejores que con SD 1.5. Necesitas solo una c
   La API (`publish.py`) solo merece la pena cuando todo lo demás funcione (pide página de Facebook y app de Meta).
 - Tono: atrevido pero sin desnudos ni contenido explícito. Si lo cruzas, Instagram limita o cierra la cuenta.
 
+## Si Colab dice "no se puede conectar con el backend de GPU" (límite de uso)
+La GPU gratis de Colab tiene un cupo que se agota; suele recuperarse pasadas unas horas (no está garantizado). Alternativa gratis: **Kaggle**.
+Los cuadernos detectan solos si están en Kaggle o Colab. Pasos (de memoria; los nombres de botones pueden variar):
+1. Crea cuenta en **kaggle.com** y verifica el teléfono (Settings → Phone verification): sin eso no deja activar GPU ni Internet.
+2. **Datasets → New Dataset**: sube las fotos elegidas (los `img_XX.png` de la lista `ELEGIDAS`) y ponle de nombre `lia-dataset`.
+3. Descarga el cuaderno (clic derecho → Guardar enlace como…) y súbelo en Kaggle: **Create → New Notebook → File → Import Notebook**:
+   `https://raw.githubusercontent.com/mtnzzraw/Agent-Reach/claude/beautiful-goodall-w8susi/ai-influencer/2_entrenar_lora.ipynb`
+4. En la barra lateral: **Accelerator: GPU T4 x2** (mejor que P100) e **Internet: On**. **Add Data** → tu `lia-dataset`.
+5. **Save Version → Save & Run All**. El LoRA queda en la pestaña **Output**.
+6. Cuaderno 3 en Kaggle igual (`3_generar.ipynb`), y añade como entrada la salida del cuaderno 2 con **Add Data → Notebook Output**.
+Kaggle da un cupo semanal de GPU (unas 30 h, según recuerdo; compruébalo en tu cuenta).
+
 ## Opcional: generar en tu Mac (peor calidad)
 `setup.sh`, `run.py`, `gen_dataset.py`, `contact_sheet.py` siguen funcionando con SD 1.5 en tu Mac de 8 GB,
 pero las caras salen peores. Útil solo para pruebas rápidas.

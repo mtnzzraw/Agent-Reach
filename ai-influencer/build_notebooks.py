@@ -56,13 +56,18 @@ def nb(cells): return {"cells": cells, "metadata": {"kernelspec": {"display_name
                        "accelerator": "GPU"}, "nbformat": 4, "nbformat_minor": 5}
 
 SETUP = code(f'''
-from google.colab import drive
-drive.mount('/content/drive')
-import os
-BASE = '/content/drive/MyDrive/{DRIVE_DIR}'      # todo se guarda aquí, en tu Google Drive
+import os, glob
+if os.path.exists('/kaggle/working'):           # Kaggle (alternativa gratis cuando Colab no da GPU)
+    PLATAFORMA = 'kaggle'
+    BASE = '/kaggle/working/{DRIVE_DIR}'
+else:                                           # Colab: todo se guarda en tu Google Drive
+    PLATAFORMA = 'colab'
+    from google.colab import drive
+    drive.mount('/content/drive')
+    BASE = '/content/drive/MyDrive/{DRIVE_DIR}'
 for d in ('candidatas', 'dataset', 'lora'):
     os.makedirs(f'{{BASE}}/{{d}}', exist_ok=True)
-import torch; print('GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NINGUNA -> Entorno de ejecución > Cambiar tipo > GPU T4')
+import torch; print(PLATAFORMA, '| GPU:', torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'NINGUNA -> activa la GPU en los ajustes del cuaderno')
 ''')
 # Colab trae una torchao antigua que rompe el import de diffusers 0.41 (cannot import name 'FqnToConfig'); no la usamos.
 # diffusers 0.41.0 es la versión probada con el transformers 5.x de Colab.
@@ -132,9 +137,15 @@ entero) y pon sus números en la lista `ELEGIDAS` de la primera celda: se copian
 # Números de img_XX.png elegidos de lia2/candidatas. Se copian solos a lia2/dataset. Edita la lista para cambiar la selección.
 ELEGIDAS = [28, 29, 30, 31, 33, 35, 38, 42, 43, 45, 52, 54, 55, 56, 57, 59, 61, 64, 80, 85, 89, 91, 94, 100]
 import shutil
-for n in ELEGIDAS:
-    shutil.copy(f'{BASE}/candidatas/img_{n:02d}.png', f'{BASE}/dataset/')
-print(len(ELEGIDAS), 'fotos copiadas a lia2/dataset')
+if PLATAFORMA == 'kaggle':   # las fotos elegidas se suben como Dataset de Kaggle y llegan en /kaggle/input
+    fotos = glob.glob('/kaggle/input/**/*.png', recursive=True) + glob.glob('/kaggle/input/**/*.jpg', recursive=True)
+    for f in fotos:
+        shutil.copy(f, f'{BASE}/dataset/')
+    print(len(fotos), 'fotos copiadas desde tu Dataset de Kaggle')
+else:
+    for n in ELEGIDAS:
+        shutil.copy(f'{BASE}/candidatas/img_{n:02d}.png', f'{BASE}/dataset/')
+    print(len(ELEGIDAS), 'fotos copiadas a lia2/dataset')
 '''),
  code('''
 !pip install -q bitsandbytes
@@ -145,7 +156,7 @@ print(n, 'imágenes en el dataset')
 assert n >= 10, 'Pon en ELEGIDAS los números de tus mejores imágenes (mínimo 10, ideal 20-30)'
 '''),
  code('''
-!accelerate launch --mixed_precision=fp16 train_dreambooth_lora_sdxl.py \\
+!accelerate launch --num_processes=1 --mixed_precision=fp16 train_dreambooth_lora_sdxl.py \\
   --pretrained_model_name_or_path=SG161222/RealVisXL_V4.0 \\
   --pretrained_vae_model_name_or_path=madebyollin/sdxl-vae-fp16-fix \\
   --instance_data_dir={BASE}/dataset \\
@@ -161,6 +172,8 @@ assert n >= 10, 'Pon en ELEGIDAS los números de tus mejores imágenes (mínimo 
 import os
 f = f'{BASE}/lora/pytorch_lora_weights.safetensors'
 print('OK, LoRA guardado:' if os.path.exists(f) else 'NO se creó el LoRA, revisa los errores de arriba:', f)
+if PLATAFORMA == 'kaggle':
+    print('Kaggle: pulsa "Save Version" > "Save & Run All". El LoRA queda en la pestaña Output; en el cuaderno 3 añádelo con Add Data > Notebook Output.')
 '''),
 ])
 
@@ -190,7 +203,12 @@ y publica siempre con la etiqueta de IA.
  SETUP, INSTALL,
  code(f"STYLE = {STYLE3!r}\nNEGATIVE = {NEGATIVE3!r}\nOUT = 'salida_iphone'\nPLAN = {json.dumps(plan, ensure_ascii=False, indent=1)}\nDESDE, HASTA = 1, 10     # días del plan a generar\nDETALLE = True          # pasada de detalle: amplía la foto y repasa cara y piel (más definición, +1 min por foto)\nESCALA_DETALLE, FUERZA_DETALLE = 1.25, 0.3\n"),
  code(LOAD + COMPEL + '''
-pipe.load_lora_weights(f'{BASE}/lora', weight_name='pytorch_lora_weights.safetensors')
+lora_dir = f'{BASE}/lora'
+if not os.path.exists(f'{lora_dir}/pytorch_lora_weights.safetensors'):   # Kaggle: viene como Input (salida del cuaderno 2)
+    hallado = glob.glob('/kaggle/input/**/pytorch_lora_weights.safetensors', recursive=True)
+    assert hallado, 'No encuentro el LoRA: en Kaggle añade la salida del cuaderno 2 con Add Data > Notebook Output'
+    lora_dir = os.path.dirname(hallado[0])
+pipe.load_lora_weights(lora_dir, weight_name='pytorch_lora_weights.safetensors')
 from diffusers import StableDiffusionXLImg2ImgPipeline
 from PIL import Image
 refinar = StableDiffusionXLImg2ImgPipeline(**pipe.components)   # comparte modelo y LoRA: no gasta más memoria
