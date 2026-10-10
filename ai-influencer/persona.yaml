@@ -1,0 +1,33 @@
+# Creadora virtual — SIEMPRE etiquetada como IA (bio, captions y etiqueta "AI info" de Instagram)
+name: Lía Marín
+handle: "@lia.wanders.ai"            # cambia por el handle real
+bio: "🤖 Creadora virtual (IA) · Fitness & lifestyle 🏋️‍♀️☀️ · Entrena, viaja, repite"
+niche: fitness y lifestyle
+disclosure_caption: "✨ Imagen generada con IA · Virtual creator"
+base_hashtags: ["#aiinfluencer", "#virtualcreator", "#aigenerated", "#fitnessinspo", "#lifestyle"]
+# Descripción fija del personaje (úsala igual en TODOS los prompts + tu LoRA)
+character: "lia_character, 26 year old woman, long wavy copper auburn hair, hazel eyes, clear natural skin, curvy hourglass figure, natural proportions, warm smile"
+# Mujer normal y realista: figura definida (pecho y cadera) con proporciones naturales, sin exagerar; pelo cobrizo; sin pecas.
+# Tono: seguro y coqueto, con escote moderado (tops escotados, bikini) pero sin transparencias ni nada explícito. Nada de desnudos
+# (Instagram lo penaliza y puede cerrar la cuenta).
+negative: "nsfw, nudity, freckles, moles, deformed hands, extra fingers, bad anatomy, bad teeth, deformed face, blurry, watermark, text, plastic skin, airbrushed, lowres, deformed iris, deformed pupils, uncanny, ugly, exaggerated proportions, huge breasts, disproportionate body"
+home:   # La misma casa en todas las fotos de espejo (se inserta en las escenas donde aparece {CLAVE}).
+  BANO: "small white-tiled bathroom, rectangular mirror with a thin black frame over a white sink, grey towel on a hook, frame edges visible"
+  DORMITORIO_BASE: "bedroom with a white door, light wood floor and grey bedspread"
+  DORMITORIO: "bedroom with a white door, light wood floor and grey bedspread, tall mirror with a thin black frame, frame edges visible"
+pillars:
+  - {name: gym, weight: 3}
+  - {name: playa_sol, weight: 2}
+  - {name: lifestyle, weight: 3}
+  - {name: salida_noche, weight: 2}
+  - {name: selfie_espejo, weight: 10}   # estilo referencia: selfies de espejo caseros, a menudo con el móvil tapando la cara
+  - {name: sin_cara, weight: 3}   # fotos de espaldas/cuerpo/detalle: la cara no tiene que salir
+  - {name: behind_the_ai, weight: 1}   # contenido sobre cómo se hace: genera confianza y comunidad
+scenes:
+  gym: ["mirror photo in a modern gym, matching sports bra and leggings, holding phone", "stretching on a yoga mat at sunrise by a window, athletic wear", "resting between sets on a bench, towel around neck, gym lighting", "mirror photo in a gym changing area after a workout, cropped zip hoodie and biker shorts, holding phone", "mirror photo after a workout, sports bra and leggings, phone covering part of her face"]
+  playa_sol: ["walking on a beach at golden hour in a stylish bikini and sheer cover-up, looking over shoulder", "lounging by a rooftop pool in a one-piece swimsuit and sunglasses", "paddle board at sunrise, athletic swimwear, confident smile"]
+  lifestyle: ["sitting in a sunny café in a fitted scoop-neck top and high-waist jeans with iced coffee", "holding a green smoothie in a bright kitchen, activewear, morning light", "on a city street in oversized blazer and bike shorts, golden hour", "mirror photo in {DORMITORIO}, casual outfit check, holding phone", "mirror photo in {DORMITORIO_BASE}, fitted crop top and high-waist jeans, holding phone, morning light"]
+  salida_noche: ["in a fitted black mini dress at a rooftop bar, city lights, playful look at camera", "mirror photo in {DORMITORIO}, satin slip dress, warm lighting, holding phone"]
+  behind_the_ai: ["laptop screen showing a ComfyUI node graph, desk with coffee, lifestyle photo"]
+  sin_cara: ["from behind walking on the beach at sunset in a stylish bikini, long wavy hair, glancing over her shoulder", "back view standing at a gym mirror in a sports bra and high-waist leggings, athletic toned back", "low angle from behind in a yoga pose on a mat, fitted activewear, sunrise light", "torso and waist in a cropped top and low-rise jeans at golden hour, face out of frame", "legs and sandals by a rooftop pool in a summer swimsuit, bright sun", "silhouette at the beach in a one-piece swimsuit, sunset backlight", "from behind on a city balcony in a fitted mini dress, night lights, looking over her shoulder"]
+  selfie_espejo: ["mirror photo in {BANO}, harsh ceiling lights, phone covering her face, fitted black scoop-neck top, modest cleavage, floral skirt", "mirror photo in {DORMITORIO}, white fitted crop top and light blue jeans, phone covering half her face", "mirror photo in {DORMITORIO_BASE}, flash glare, open blue windbreaker over a low-cut black top, modest cleavage, phone covering her face", "mirror photo in {DORMITORIO_BASE}, white fitted tank top and high-waist jeans, phone covering half her face", "mirror photo in {BANO}, at night, black hoodie and crop top, phone covering her face, grainy", "mirror photo in {DORMITORIO}, fitted v-neck top, modest cleavage, high-waist jeans, phone covering her face", "seen from behind in {BANO}, fitted black crop top and floral skirt, holding phone up to the mirror", "sitting on an outdoor cafe sofa holding an iced coffee, blue varsity jacket, ripped jeans, white sneakers, hand covering part of her face"]
