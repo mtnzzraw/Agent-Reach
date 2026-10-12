@@ -17,7 +17,7 @@ NEGATIVE_DS = ("nsfw, nudity, freckles, moles, deformed, bad anatomy, deformed i
 # Estilo para las publicaciones. Solo estética: no se añaden metadatos falsos de cámara; las fotos siguen siendo IA
 # y se publican etiquetadas como tal. Se permiten logos reales (p. ej. la manzana del iPhone).
 STYLE3 = "amateur iPhone photo, candid, unedited, slight grain, imperfect framing"
-NEGATIVE3 = ("cat ears, hair bow, pastel pink walls, cats, plush toys, black hair, dark brown hair, bangs, hair bun, blonde highlights, brown hair, balayage, nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, "
+NEGATIVE3 = ("bright red hair, neon red hair, cat ears, hair bow, pastel pink walls, cats, plush toys, black hair, dark brown hair, bangs, hair bun, blonde highlights, brown hair, balayage, nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, "
              "extra fingers, blurry, watermark, plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, "
              "professional photography, bokeh, retouched, airbrushed, HDR, cinematic, deformed phone, phone without camera lenses")
 
@@ -48,7 +48,7 @@ def combos(shots, bgs, n):
 CANDIDATES = ([f"{CHAR}, {s}, {b}, {l}" for s, b, l in combos(selfie, selfie_bg, 25) + combos(mirror, mirror_bg, 35)]
               + [f"{CHAR}, {s}, {l}" for s, _, l in combos(body, [""], 40)])
 
-plan = [{"pillar": x["pillar"], "prompt": f"photo of lia_character woman, long wavy copper red hair, hazel eyes, {x['scene']}", "caption": x["caption"]} for x in make_plan(30)]
+plan = [{"pillar": x["pillar"], "prompt": f"photo of lia_character woman, long wavy natural copper auburn hair, hazel eyes, {x['scene']}", "caption": x["caption"]} for x in make_plan(30)]
 
 def md(t): return {"cell_type": "markdown", "metadata": {}, "source": t.strip("\n").splitlines(True)}
 def code(t): return {"cell_type": "code", "metadata": {}, "execution_count": None, "outputs": [], "source": t.strip("\n").splitlines(True)}
@@ -190,6 +190,8 @@ compel = Compel(tokenizer=[pipe.tokenizer, pipe.tokenizer_2], text_encoder=[pipe
                 requires_pooled=[False, True], truncate_long_prompts=False)
 def codificar(prompt, negative):
     # los guiones se quitan porque compel los usaría como símbolo de peso (p. ej. "white-tiled")
+    for a in ('deep cleavage', 'plunging neckline', 'low cut', 'low neckline'):   # más peso: el modelo tiende a ignorar el escote
+        prompt = prompt.replace(a, '(' + a + ')1.4')
     cond, pooled = compel(prompt.replace('-', ' ')); ncond, npooled = compel(negative.replace('-', ' '))
     cond, ncond = compel.pad_conditioning_tensors_to_same_length([cond, ncond])
     return dict(prompt_embeds=cond, pooled_prompt_embeds=pooled, negative_prompt_embeds=ncond, negative_pooled_prompt_embeds=npooled)
