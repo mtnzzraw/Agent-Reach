@@ -187,6 +187,8 @@ if PLATAFORMA == 'kaggle':
 
 # Prompts largos: SDXL lee 77 tokens por trozo; compel parte el texto en trozos y los junta (probado con diffusers 0.41).
 COMPEL = '''
+import re
+print('versión del cuaderno: 2026-10-12 e (sin pesos de compel, calidad alta)')
 from compel import Compel, ReturnedEmbeddingsType
 compel = Compel(tokenizer=[pipe.tokenizer, pipe.tokenizer_2], text_encoder=[pipe.text_encoder, pipe.text_encoder_2],
                 returned_embeddings_type=ReturnedEmbeddingsType.PENULTIMATE_HIDDEN_STATES_NON_NORMALIZED,
@@ -195,7 +197,11 @@ def codificar(prompt, negative):
     # los guiones se quitan porque compel los usaría como símbolo de peso (p. ej. "white-tiled")
     if 'deep cleavage' in prompt:   # el modelo tiende a ignorar el escote: se repite al principio (los pesos de compel dan error con SDXL)
         prompt = 'deep cleavage, plunging neckline, ' + prompt
-    cond, pooled = compel(prompt.replace('-', ' ')); ncond, npooled = compel(negative.replace('-', ' '))
+    prompt, negative = re.sub(r'[()+\\-\\[\\]\"{}<>]', ' ', prompt), re.sub(r'[()+\\-\\[\\]\"{}<>]', ' ', negative)   # sin símbolos de compel (pesos): dan error con SDXL
+    try:
+        cond, pooled = compel(prompt); ncond, npooled = compel(negative)
+    except Exception as e:   # red de seguridad: si compel falla por cualquier motivo, se avisa y se usa un prompt simple
+        print('aviso compel:', repr(e)[:120], '-> prompt simple'); cond, pooled = compel(' '.join(prompt.split()[:60])); ncond, npooled = compel(' '.join(negative.split()[:60]))
     cond, ncond = compel.pad_conditioning_tensors_to_same_length([cond, ncond])
     return dict(prompt_embeds=cond, pooled_prompt_embeds=pooled, negative_prompt_embeds=ncond, negative_pooled_prompt_embeds=npooled)
 '''
@@ -211,7 +217,7 @@ Las fotos de espejo piden el iPhone con su logo visible y el móvil tapando la c
 y publica siempre con la etiqueta de IA.
 '''),
  SETUP, INSTALL,
- code(f"STYLE = {STYLE3!r}\nNEGATIVE = {NEGATIVE3!r}\nOUT = 'salida_iphone'\nPLAN = {json.dumps(plan, ensure_ascii=False, indent=1)}\nDESDE, HASTA = 1, 10     # días del plan a generar\nDETALLE = True          # pasada de detalle: amplía la foto y repasa cara y piel (más definición, +1 min por foto)\nESCALA_DETALLE, FUERZA_DETALLE = 1.25, 0.3\n"),
+ code(f"STYLE = {STYLE3!r}\nNEGATIVE = {NEGATIVE3!r}\nOUT = 'salida_iphone'\nPLAN = {json.dumps(plan, ensure_ascii=False, indent=1)}\nDESDE, HASTA = 1, 10     # días del plan a generar\nDETALLE = True          # pasada de detalle: amplía la foto y repasa cara y piel (más definición, +1 min por foto)\nESCALA_DETALLE, FUERZA_DETALLE = 1.4, 0.35\n"),
  code(LOAD + COMPEL + '''
 lora_dir = f'{BASE}/lora'
 if not os.path.exists(f'{lora_dir}/pytorch_lora_weights.safetensors'):   # Kaggle: viene como Input (salida del cuaderno 2)
@@ -228,7 +234,7 @@ os.makedirs(f'{BASE}/{OUT}', exist_ok=True)
 cap = f'{BASE}/{OUT}/captions.csv'
 if not os.path.exists(cap):
     open(cap, 'w', encoding='utf-8').write('dia,pilar,archivo,caption\\n')
-VARIANTES_ESPEJO = 4   # selfies de espejo: se generan varias versiones para quedarte con la del móvil bien hecho
+VARIANTES_ESPEJO = 6   # selfies de espejo: se generan varias versiones para quedarte con la del móvil bien hecho
 for n in range(DESDE, HASTA + 1):
   it = PLAN[n - 1]
   for v in range(VARIANTES_ESPEJO if 'mirror photo' in it['prompt'] else 1):
@@ -242,13 +248,13 @@ for n in range(DESDE, HASTA + 1):
     else:
         cam = 'shot on a phone, casual framing'
     emb = codificar(f'{STYLE}, {cam}, {it["prompt"]}', NEGATIVE)
-    img = pipe(**emb, width=832, height=1216, num_inference_steps=30, guidance_scale=4.5, generator=g,
+    img = pipe(**emb, width=832, height=1216, num_inference_steps=45, guidance_scale=5.0, generator=g,
                cross_attention_kwargs={'scale': 1.0}).images[0]
     if DETALLE:
         try:
             w2, h2 = int(832 * ESCALA_DETALLE) // 8 * 8, int(1216 * ESCALA_DETALLE) // 8 * 8
-            img = refinar(**emb, image=img.resize((w2, h2), Image.LANCZOS), strength=FUERZA_DETALLE, num_inference_steps=30,
-                          guidance_scale=4.5, generator=g, cross_attention_kwargs={'scale': 1.0}).images[0]
+            img = refinar(**emb, image=img.resize((w2, h2), Image.LANCZOS), strength=FUERZA_DETALLE, num_inference_steps=45,
+                          guidance_scale=5.0, generator=g, cross_attention_kwargs={'scale': 1.0}).images[0]
         except torch.cuda.OutOfMemoryError:
             torch.cuda.empty_cache(); print('sin memoria para la pasada de detalle: se guarda la foto sin repasar')
     img.save(f)
