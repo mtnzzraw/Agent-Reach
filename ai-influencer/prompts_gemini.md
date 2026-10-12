@@ -1,46 +1,259 @@
 # Textos para Gemini — Lía Marín (30 días)
 
-**Cómo usarlo:** abre una conversación nueva en Gemini, sube 3 fotos de referencia de Lía (las mismas siempre) y pega, para cada día, el texto de abajo.
-Empieza siempre con la frase base. Cada foto sale de un día. Descarta las que tengan fallos y repite el día si hace falta.
-Publica siempre con el aviso de IA ("Imagen generada con IA" + etiqueta *AI info* de Instagram).
+**Cómo usarlo:** abre una conversación en Gemini, sube SIEMPRE las mismas 3 fotos de referencia de Lía y pega para cada día: **frase base + escena del día** (+ tatuaje si el día lo marca).
+Las que salen mal se repiten o se descartan. Publica siempre con el aviso de IA y la etiqueta *AI info* de Instagram.
 
-## Frase base (va al principio de cada texto)
+## Frase base (al principio de cada texto)
 
-> Crea una foto nueva de la misma mujer de las imágenes de referencia: mismo rostro, pelo largo ondulado cobrizo, figura natural. Foto casera hecha con un iPhone, luz natural, ligero grano, aspecto 100 % real y sin retoque. Si sale un móvil, es un iPhone con la manzana y tres cámaras bien dibujadas.
+> Crea una foto nueva de la misma mujer de las imágenes de referencia: mismo rostro, pelo largo ondulado cobrizo, figura natural, sin pecas. Foto casera hecha con un iPhone, luz natural, ligero grano, aspecto 100 % real y sin retoque. Sin collares ni colgantes. Si aparece un móvil, es un iPhone con la manzana y tres cámaras bien dibujadas.
 
-## Tatuaje (se añade solo en las fotos donde se ve el escote)
+## Tatuaje (solo en los días marcados con 🌙)
 
 > Lleva un pequeño tatuaje de línea fina de luna creciente en el pecho, entre las clavículas, sin collar ni colgante.
 
+## Consejos
+
+- Si Gemini rechaza una foto, cambia **bikini** por **bañador de una pieza** o pide un plano más cerrado. No insistas con trucos.
+- Para más sonrisa: «sonrisa pícara». Para más escote: «escote en V muy profundo».
+
 ## Los 30 días
 
-- **Día 1** (playa_sol): paddle board at sunrise, athletic swimwear, confident smile
-- **Día 2** (gym): resting between sets on a bench, towel around neck, gym lighting
-- **Día 3** (playa_sol): lounging by a rooftop pool in a one-piece swimsuit and sunglasses  **+ tatuaje**
-- **Día 4** (selfie_espejo): foto en un espejo de stylish modern bedroom with a white door, beige bedding, warm bedside lamp and light wood floor, tight low-cut crop top with deep cleavage and low-rise jeans, holding phone, biting her lip  **+ tatuaje**
-- **Día 5** (sin_cara): torso and waist in a cropped top and low-rise jeans at golden hour, face out of frame
-- **Día 6** (lifestyle): sitting in a sunny café in a fitted scoop-neck top and high-waist jeans with iced coffee
-- **Día 7** (selfie_espejo): foto en un espejo de a room with a large full-length mirror with a thin black frame leaning against a plain white wall, light wood floor, soft daylight from a window, white bodysuit with a plunging neckline and deep cleavage, high-waist jeans, holding phone, confident look  **+ tatuaje**
-- **Día 8** (selfie_espejo): foto en un espejo de stylish modern bedroom with a white door, beige bedding, warm bedside lamp and light wood floor, tall mirror with a thin black frame, frame edges visible, black satin mini slip dress with a plunging neckline, deep cleavage, holding phone, flirty look  **+ tatuaje**
-- **Día 9** (selfie_espejo): foto en un espejo de a room with a large full-length mirror with a thin black frame leaning against a plain white wall, light wood floor, soft daylight from a window, white bodysuit with a plunging neckline and deep cleavage, high-waist jeans, holding phone, confident look  **+ tatuaje**
-- **Día 10** (sin_cara): torso and waist in a cropped top and low-rise jeans at golden hour, face out of frame
-- **Día 11** (salida_noche): foto en un espejo de elegant modern bathroom with white marble tiles, a large round mirror with a thin gold frame over a white marble sink, warm wall lights, a green plant, a white towel, frame edges visible, tight black mini dress with a plunging neckline, deep cleavage, red lipstick, holding phone, playful look  **+ tatuaje**
-- **Día 12** (lifestyle): foto en un espejo de stylish modern bedroom with a white door, beige bedding, warm bedside lamp and light wood floor, fitted crop top and high-waist jeans, holding phone, morning light
-- **Día 13** (playa_sol): lounging by a rooftop pool in a one-piece swimsuit and sunglasses  **+ tatuaje**
-- **Día 14** (gym): foto en un espejo de a modern gym, matching sports bra and leggings, holding phone  **+ tatuaje**
-- **Día 15** (gym): mirror photo after a workout, sports bra and leggings, phone covering part of her face  **+ tatuaje**
-- **Día 16** (gym): foto en un espejo de a gym changing area after a workout, cropped zip hoodie and biker shorts, holding phone
-- **Día 17** (sin_cara): back view standing at a gym mirror in a sports bra and high-waist leggings, athletic toned back
-- **Día 18** (selfie_espejo): foto en un espejo de a room with a large full-length mirror with a thin black frame leaning against a plain white wall, light wood floor, soft daylight from a window, white bodysuit with a plunging neckline and deep cleavage, high-waist jeans, holding phone, confident look  **+ tatuaje**
-- **Día 19** (selfie_espejo): foto en un espejo de stylish modern bedroom with a white door, beige bedding, warm bedside lamp and light wood floor, tall mirror with a thin black frame, frame edges visible, white fitted crop top and light blue jeans, phone covering half her face
-- **Día 20** (selfie_espejo): foto en un espejo de stylish modern bedroom with a white door, beige bedding, warm bedside lamp and light wood floor, tight low-cut crop top with deep cleavage and low-rise jeans, holding phone, biting her lip  **+ tatuaje**
-- **Día 21** (selfie_espejo): foto en un espejo de stylish modern bedroom with a white door, beige bedding, warm bedside lamp and light wood floor, tall mirror with a thin black frame, frame edges visible, white fitted crop top and light blue jeans, phone covering half her face
-- **Día 22** (selfie_espejo): foto en un espejo de stylish modern bedroom with a white door, beige bedding, warm bedside lamp and light wood floor, tall mirror with a thin black frame, frame edges visible, white fitted crop top and light blue jeans, phone covering half her face
-- **Día 23** (sin_cara): back view standing at a gym mirror in a sports bra and high-waist leggings, athletic toned back
-- **Día 24** (selfie_espejo): foto en un espejo de stylish modern bedroom with a white door, beige bedding, warm bedside lamp and light wood floor, white fitted tank top and high-waist jeans, phone covering half her face
-- **Día 25** (gym): foto en un espejo de a gym changing area after a workout, cropped zip hoodie and biker shorts, holding phone
-- **Día 26** (selfie_espejo): foto en un espejo de a room with a large full-length mirror with a thin black frame leaning against a plain white wall, light wood floor, soft daylight from a window, open blue windbreaker over a low-cut black top, deep cleavage, flash glare, phone covering her face  **+ tatuaje**
-- **Día 27** (lifestyle): on a city street in oversized blazer and bike shorts, golden hour
-- **Día 28** (playa_sol): paddle board at sunrise, athletic swimwear, confident smile
-- **Día 29** (selfie_espejo): seen from behind in elegant modern bathroom with white marble tiles, a large round mirror with a thin gold frame over a white marble sink, warm wall lights, a green plant, a white towel, frame edges visible, fitted black crop top and floral skirt, holding phone up to the mirror
-- **Día 30** (selfie_espejo): seen from behind in elegant modern bathroom with white marble tiles, a large round mirror with a thin gold frame over a white marble sink, warm wall lights, a green plant, a white towel, frame edges visible, fitted black crop top and floral skirt, holding phone up to the mirror
+### Día 1
+**Escena:** Haciendo paddle surf al amanecer con un bañador deportivo de una pieza, sonrisa segura.
+**Caption sugerido:** Amanecer en el agua 🌅 empezar el día así lo cambia todo
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 2
+**Escena:** Descansando entre series en un banco del gimnasio, con una toalla al cuello y luz de gimnasio, de pie o sentada, mirando a cámara.
+**Caption sugerido:** Entre series 💪 la constancia gana
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 3 🌙
+**Escena:** Tumbada junto a una piscina en una azotea, con un bañador negro de una pieza y gafas de sol.
+**Caption sugerido:** Día de piscina ☀️
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 4 🌙
+**Escena:** Foto en un espejo en un dormitorio moderno y elegante con puerta blanca, cama beige, lámpara cálida en la mesilla y suelo de madera clara, con un top corto ajustado de escote profundo y vaqueros de tiro bajo, sosteniendo el móvil, con mirada pícara.
+**Caption sugerido:** Outfit del día 🖤
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 5
+**Escena:** Plano de torso y cintura con un top corto y vaqueros de tiro bajo, luz dorada del atardecer, sin enseñar la cara.
+**Caption sugerido:** Golden hour ✨
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 6
+**Escena:** Sentada en la terraza soleada de un café, con un top ajustado de escote redondo y vaqueros de cintura alta, con un café con hielo.
+**Caption sugerido:** Café con hielo y buen plan ☕
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 7 🌙
+**Escena:** Foto en un espejo en una habitación con un espejo de cuerpo entero de marco negro fino apoyado en una pared blanca lisa, suelo de madera clara y luz suave de ventana, con un body blanco de escote pronunciado y vaqueros de cintura alta, sosteniendo el móvil, mirada segura.
+**Caption sugerido:** Blanco y vaqueros, siempre funciona 🤍
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 8 🌙
+**Escena:** Foto en un espejo en un dormitorio moderno y elegante con puerta blanca, cama beige, lámpara cálida en la mesilla, suelo de madera clara y un espejo alto de marco negro fino, con un minivestido lencero negro de satén con escote pronunciado, sosteniendo el móvil, mirada coqueta.
+**Caption sugerido:** Plan de noche 🖤
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 9 🌙
+**Escena:** Foto en un espejo en una habitación con un espejo de cuerpo entero de marco negro fino apoyado en una pared blanca lisa, suelo de madera clara y luz suave de ventana, con un body blanco de escote pronunciado y vaqueros de cintura alta, sosteniendo el móvil, mirada segura.
+**Caption sugerido:** Blanco y vaqueros, siempre funciona 🤍
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 10
+**Escena:** Plano de torso y cintura con un top corto y vaqueros de tiro bajo, luz dorada del atardecer, sin enseñar la cara.
+**Caption sugerido:** Golden hour ✨
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 11 🌙
+**Escena:** Foto en un espejo en un baño elegante y moderno con azulejos de mármol blanco, un espejo redondo con marco dorado fino sobre un lavabo de mármol, luz cálida y una planta, con un minivestido negro ajustado de escote pronunciado, labios rojos, sosteniendo el móvil, mirada juguetona.
+**Caption sugerido:** Lista para salir 💋
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 12
+**Escena:** Foto en un espejo en un dormitorio moderno y elegante con puerta blanca, cama beige, lámpara cálida en la mesilla y suelo de madera clara, con un top corto ajustado y vaqueros de cintura alta, sosteniendo el móvil, luz de mañana.
+**Caption sugerido:** Buenos días ☀️
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 13 🌙
+**Escena:** Tumbada junto a una piscina en una azotea, con un bañador negro de una pieza y gafas de sol.
+**Caption sugerido:** Día de piscina ☀️
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 14
+**Escena:** Foto en el espejo de un gimnasio moderno, con top deportivo y mallas a juego, sosteniendo el móvil.
+**Caption sugerido:** Día de pierna 🔥
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 15
+**Escena:** Foto en un espejo después de entrenar, con top deportivo y mallas, el móvil tapando parte de la cara.
+**Caption sugerido:** Post entreno 💦
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 16
+**Escena:** Foto en un espejo en el vestuario de un gimnasio tras entrenar, con una sudadera corta con cremallera y shorts de ciclista, sosteniendo el móvil.
+**Caption sugerido:** Vestuario y a por todas 💪
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 17
+**Escena:** De espaldas frente al espejo de un gimnasio, con top deportivo y mallas de cintura alta, espalda tonificada.
+**Caption sugerido:** Trabajando la espalda 🏋️‍♀️
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 18 🌙
+**Escena:** Foto en un espejo en una habitación con un espejo de cuerpo entero de marco negro fino apoyado en una pared blanca lisa, suelo de madera clara y luz suave de ventana, con un body blanco de escote pronunciado y vaqueros de cintura alta, sosteniendo el móvil, mirada segura.
+**Caption sugerido:** Blanco y vaqueros, siempre funciona 🤍
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 19
+**Escena:** Foto en un espejo en un dormitorio moderno y elegante con puerta blanca, cama beige, lámpara cálida en la mesilla, suelo de madera clara y un espejo alto de marco negro fino, con un top corto blanco ajustado y vaqueros claros, el móvil tapando la mitad de la cara.
+**Caption sugerido:** Básicos que nunca fallan 🤍
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 20 🌙
+**Escena:** Foto en un espejo en un dormitorio moderno y elegante con puerta blanca, cama beige, lámpara cálida en la mesilla y suelo de madera clara, con un top corto ajustado de escote profundo y vaqueros de tiro bajo, sosteniendo el móvil, con mirada pícara.
+**Caption sugerido:** Outfit del día 🖤
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 21
+**Escena:** Foto en un espejo en un dormitorio moderno y elegante con puerta blanca, cama beige, lámpara cálida en la mesilla, suelo de madera clara y un espejo alto de marco negro fino, con un top corto blanco ajustado y vaqueros claros, el móvil tapando la mitad de la cara.
+**Caption sugerido:** Básicos que nunca fallan 🤍
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 22
+**Escena:** Foto en un espejo en un dormitorio moderno y elegante con puerta blanca, cama beige, lámpara cálida en la mesilla, suelo de madera clara y un espejo alto de marco negro fino, con un top corto blanco ajustado y vaqueros claros, el móvil tapando la mitad de la cara.
+**Caption sugerido:** Básicos que nunca fallan 🤍
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 23
+**Escena:** De espaldas frente al espejo de un gimnasio, con top deportivo y mallas de cintura alta, espalda tonificada.
+**Caption sugerido:** Trabajando la espalda 🏋️‍♀️
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 24
+**Escena:** Foto en un espejo en un dormitorio moderno y elegante con puerta blanca, cama beige, lámpara cálida en la mesilla y suelo de madera clara, con una camiseta de tirantes blanca ajustada y vaqueros de cintura alta, el móvil tapando la mitad de la cara.
+**Caption sugerido:** Casual y cómoda 🤍
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 25
+**Escena:** Foto en un espejo en el vestuario de un gimnasio tras entrenar, con una sudadera corta con cremallera y shorts de ciclista, sosteniendo el móvil.
+**Caption sugerido:** Vestuario y a por todas 💪
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 26 🌙
+**Escena:** Foto en un espejo en una habitación con un espejo de cuerpo entero de marco negro fino apoyado en una pared blanca lisa, suelo de madera clara y luz suave de ventana, con un cortavientos azul abierto sobre un top negro escotado, con reflejo de flash, el móvil tapando la cara.
+**Caption sugerido:** Flash y cortavientos ⚡
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 27
+**Escena:** En una calle de la ciudad con blazer oversize y shorts de ciclista, luz dorada del atardecer.
+**Caption sugerido:** Paseo al atardecer 🌇
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 28
+**Escena:** Haciendo paddle surf al amanecer con un bañador deportivo de una pieza, sonrisa segura.
+**Caption sugerido:** Amanecer en el agua 🌅 empezar el día así lo cambia todo
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 29
+**Escena:** Vista de espaldas en un baño elegante y moderno con azulejos de mármol blanco, un espejo redondo con marco dorado fino sobre un lavabo de mármol, luz cálida y una planta, con un top corto negro ajustado y falda de flores, sosteniendo el móvil frente al espejo.
+**Caption sugerido:** Falda de flores 🌸
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
+
+### Día 30
+**Escena:** Vista de espaldas en un baño elegante y moderno con azulejos de mármol blanco, un espejo redondo con marco dorado fino sobre un lavabo de mármol, luz cálida y una planta, con un top corto negro ajustado y falda de flores, sosteniendo el móvil frente al espejo.
+**Caption sugerido:** Falda de flores 🌸
+
+✨ Imagen generada con IA · Virtual creator
+
+#aiinfluencer #virtualcreator #aigenerated #fitnessinspo #lifestyle
