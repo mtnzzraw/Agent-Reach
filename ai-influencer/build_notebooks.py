@@ -48,7 +48,10 @@ def combos(shots, bgs, n):
 CANDIDATES = ([f"{CHAR}, {s}, {b}, {l}" for s, b, l in combos(selfie, selfie_bg, 25) + combos(mirror, mirror_bg, 35)]
               + [f"{CHAR}, {s}, {l}" for s, _, l in combos(body, [""], 40)])
 
-plan = [{"pillar": x["pillar"], "prompt": f"photo of lia_character woman, long wavy copper red hair, ginger copper tone, auburn, hazel eyes, {x['scene']}", "caption": x["caption"]} for x in make_plan(30)]
+TATUAJE = "small fine-line crescent moon tattoo on her upper chest between the collarbones"   # solo en escenas donde se ve el escote
+def con_tatuaje(scene):
+    return any(k in scene for k in ("cleavage", "neckline", "bikini", "sports bra", "swimsuit", "swimwear", "bodysuit")) and "from behind" not in scene and "back view" not in scene
+plan = [{"pillar": x["pillar"], "prompt": f"photo of lia_character woman, long wavy copper red hair, ginger copper tone, auburn, hazel eyes, " + (TATUAJE + ", " if con_tatuaje(x['scene']) else "") + x['scene'], "caption": x["caption"]} for x in make_plan(30)]
 
 def md(t): return {"cell_type": "markdown", "metadata": {}, "source": t.strip("\n").splitlines(True)}
 def code(t): return {"cell_type": "code", "metadata": {}, "execution_count": None, "outputs": [], "source": t.strip("\n").splitlines(True)}
