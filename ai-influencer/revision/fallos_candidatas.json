@@ -1,0 +1,853 @@
+{
+ "codigos": {
+  "DIST": "gran angular / cara demasiado cerca (frente y nariz deformadas)",
+  "OJOS": "ojos o mirada asimétricos",
+  "PELO": "tono de pelo distinto al resto (más rubio o naranja)",
+  "DIENTES": "dientes poco definidos / pegados",
+  "CARA2": "cara más ancha/redonda: parece otra persona frente a los selfies 28–59",
+  "CARAPEQ": "cara pequeña y poco definida (cuerpo entero)",
+  "MANOS": "manos o dedos fusionados / borrosos",
+  "FONDO": "objetos del fondo deformes (máquinas, bicis, lámparas, personas)",
+  "ROPA": "fallo en la ropa o las piernas",
+  "MOVIL": "móvil mal hecho (sin lentes, logo raro, forma rara)",
+  "LOGO": "logo de marca deformado",
+  "PROP": "proporciones raras (hombros, piernas, cabeza pequeña)",
+  "RECORTE": "encuadre cortado raro (pies, muslos, brazos)",
+  "RUIDO": "demasiado oscuro / ruido"
+ },
+ "imagenes": [
+  {
+   "img": "img_01.png",
+   "fallos": [],
+   "nota": "limpia; piel muy lisa",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_02.png",
+   "fallos": [
+    "PROP"
+   ],
+   "nota": "hombro izquierdo muy grande",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_03.png",
+   "fallos": [
+    "DIST",
+    "OJOS",
+    "RECORTE"
+   ],
+   "nota": "primerísimo plano deformado",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_04.png",
+   "fallos": [
+    "PROP"
+   ],
+   "nota": "hombro grande, cara algo pequeña",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_05.png",
+   "fallos": [],
+   "nota": "limpia",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_06.png",
+   "fallos": [
+    "CARA2",
+    "DIENTES",
+    "FONDO"
+   ],
+   "nota": "sonrisa con dientes pegados; persona cortada al fondo",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_07.png",
+   "fallos": [
+    "CARA2",
+    "OJOS"
+   ],
+   "nota": "ojos de distinto tamaño",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_08.png",
+   "fallos": [
+    "DIST",
+    "OJOS"
+   ],
+   "nota": "gran angular",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_09.png",
+   "fallos": [],
+   "nota": "limpia",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_10.png",
+   "fallos": [
+    "CARA2",
+    "DIENTES"
+   ],
+   "nota": "sonrisa con dientes borrosos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_11.png",
+   "fallos": [
+    "DIST",
+    "PELO",
+    "RECORTE"
+   ],
+   "nota": "mechones naranjas; muy cerca",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_12.png",
+   "fallos": [
+    "ROPA"
+   ],
+   "nota": "tirantes asimétricos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_13.png",
+   "fallos": [
+    "ROPA"
+   ],
+   "nota": "tirante raro; por lo demás bien",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_14.png",
+   "fallos": [
+    "DIST"
+   ],
+   "nota": "frente enorme, cejas gruesas",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_15.png",
+   "fallos": [],
+   "nota": "limpia (pelo algo más claro)",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_16.png",
+   "fallos": [],
+   "nota": "limpia",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_17.png",
+   "fallos": [],
+   "nota": "limpia",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_18.png",
+   "fallos": [
+    "DIST",
+    "ROPA"
+   ],
+   "nota": "tirantes negros mezclados con la camiseta",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_19.png",
+   "fallos": [
+    "FONDO",
+    "PELO",
+    "CARA2"
+   ],
+   "nota": "gente al fondo; pelo más naranja",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_20.png",
+   "fallos": [
+    "CARA2"
+   ],
+   "nota": "mechones sueltos tipo paja",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_21.png",
+   "fallos": [
+    "OJOS",
+    "ROPA"
+   ],
+   "nota": "un ojo más grande; tirante",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_22.png",
+   "fallos": [
+    "CARA2"
+   ],
+   "nota": "mechones sueltos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_23.png",
+   "fallos": [
+    "PELO"
+   ],
+   "nota": "mechas rubias",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_24.png",
+   "fallos": [
+    "CARA2"
+   ],
+   "nota": "cara redonda",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_25.png",
+   "fallos": [
+    "PELO",
+    "DIST",
+    "ROPA"
+   ],
+   "nota": "degradado rubio; tela rara en el hombro",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_26.png",
+   "fallos": [
+    "PROP",
+    "PELO"
+   ],
+   "nota": "hombros muy estrechos; pelo naranja",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_27.png",
+   "fallos": [
+    "OJOS"
+   ],
+   "nota": "un ojo tapado por el pelo; cabeza inclinada",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_28.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_29.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_30.png",
+   "fallos": [],
+   "nota": "buena (cremallera de la chaqueta con puntos raros)",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_31.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_32.png",
+   "fallos": [
+    "PELO",
+    "PROP"
+   ],
+   "nota": "pelo naranja; hombros estrechos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_33.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_34.png",
+   "fallos": [
+    "ROPA"
+   ],
+   "nota": "chaqueta azul claro distinta a la azul oscura",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_35.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_36.png",
+   "fallos": [
+    "CARA2",
+    "PELO"
+   ],
+   "nota": "cara ancha y pelo naranja",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_37.png",
+   "fallos": [
+    "PELO",
+    "ROPA"
+   ],
+   "nota": "pelo naranja; top con frunce raro",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_38.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_39.png",
+   "fallos": [
+    "PELO"
+   ],
+   "nota": "pelo algo naranja; por lo demás bien",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_40.png",
+   "fallos": [
+    "CARA2",
+    "PELO"
+   ],
+   "nota": "cara ancha",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_41.png",
+   "fallos": [
+    "LOGO",
+    "PROP"
+   ],
+   "nota": "tres rayas deformadas en el sujetador; brazo largo",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_42.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_43.png",
+   "fallos": [
+    "FONDO"
+   ],
+   "nota": "bulto negro en el fondo; por lo demás bien",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_44.png",
+   "fallos": [
+    "MOVIL",
+    "MANOS",
+    "PELO"
+   ],
+   "nota": "móvil blanco con un trébol negro como logo y bloque de lentes mal; dedos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_45.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_46.png",
+   "fallos": [
+    "MANOS"
+   ],
+   "nota": "dedos junto al pelo poco claros",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_47.png",
+   "fallos": [
+    "FONDO"
+   ],
+   "nota": "objeto negro en la esquina",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_48.png",
+   "fallos": [
+    "CARA2"
+   ],
+   "nota": "cara redonda",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_49.png",
+   "fallos": [
+    "PROP"
+   ],
+   "nota": "hombro izquierdo grande; cara pequeña",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_50.png",
+   "fallos": [
+    "PELO"
+   ],
+   "nota": "pelo naranja",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_51.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_52.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_53.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_54.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_55.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_56.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_57.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_58.png",
+   "fallos": [
+    "MANOS"
+   ],
+   "nota": "dedos borrosos",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_59.png",
+   "fallos": [],
+   "nota": "buena",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_60.png",
+   "fallos": [
+    "CARA2",
+    "FONDO",
+    "RECORTE"
+   ],
+   "nota": "lámpara pegada al pelo; brazos cortados",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_61.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS"
+   ],
+   "nota": "manos en los bolsillos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_62.png",
+   "fallos": [
+    "MOVIL",
+    "MANOS",
+    "RECORTE"
+   ],
+   "nota": "móvil sin lentes con funda de flores; mano izquierda borrosa; falda cortada",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_63.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS",
+    "PROP"
+   ],
+   "nota": "hombros estrechos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_64.png",
+   "fallos": [
+    "MANOS",
+    "PROP",
+    "RECORTE"
+   ],
+   "nota": "dedos del vaso fusionados; pierna en escorzo; pie cortado",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_65.png",
+   "fallos": [
+    "MANOS",
+    "ROPA",
+    "FONDO"
+   ],
+   "nota": "pie descalzo raro; pierna blanca",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_66.png",
+   "fallos": [
+    "ROPA",
+    "MANOS"
+   ],
+   "nota": "pantalón blanco y vaquero mezclados en una pierna",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_67.png",
+   "fallos": [
+    "RUIDO",
+    "CARAPEQ",
+    "PELO"
+   ],
+   "nota": "oscura y granulada; pelo más rizado",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_68.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS"
+   ],
+   "nota": "pulgares fusionados",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_69.png",
+   "fallos": [
+    "MANOS",
+    "FONDO",
+    "CARAPEQ"
+   ],
+   "nota": "máquinas del gimnasio deformes; texto raro en un aparato",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_70.png",
+   "fallos": [
+    "MANOS",
+    "ROPA",
+    "RECORTE"
+   ],
+   "nota": "corte lateral del bañador raro; piernas cortadas",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_71.png",
+   "fallos": [
+    "FONDO",
+    "RECORTE"
+   ],
+   "nota": "bici deformada; muslos cortados",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_72.png",
+   "fallos": [
+    "MANOS",
+    "FONDO"
+   ],
+   "nota": "mano y bolso fusionados; líneas de la calle torcidas",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_73.png",
+   "fallos": [
+    "PROP",
+    "MANOS"
+   ],
+   "nota": "cabeza pequeña y piernas largas (perspectiva)",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_74.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS"
+   ],
+   "nota": "manos en los bolsillos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_75.png",
+   "fallos": [
+    "PROP",
+    "ROPA",
+    "RECORTE",
+    "MANOS"
+   ],
+   "nota": "piernas cruzadas raras; zapatilla cortada",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_76.png",
+   "fallos": [
+    "MOVIL",
+    "ROPA"
+   ],
+   "nota": "móvil rosa plano sin lentes; banda de encaje separada del top",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_77.png",
+   "fallos": [
+    "ROPA",
+    "CARAPEQ",
+    "RUIDO",
+    "PELO"
+   ],
+   "nota": "body metálico; pelo más rizado y naranja (descartar)",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_78.png",
+   "fallos": [
+    "MANOS",
+    "RECORTE"
+   ],
+   "nota": "taza sin asa y dedos fusionados; zapatilla cortada",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_79.png",
+   "fallos": [
+    "MANOS",
+    "FONDO",
+    "CARAPEQ"
+   ],
+   "nota": "máquinas del gimnasio deformes",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_80.png",
+   "fallos": [
+    "MOVIL",
+    "CARAPEQ"
+   ],
+   "nota": "manzana visible pero sin lentes",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_81.png",
+   "fallos": [
+    "FONDO",
+    "CARA2",
+    "MANOS"
+   ],
+   "nota": "bici deformada; cara más redonda",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_82.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS",
+    "FONDO"
+   ],
+   "nota": "bici al fondo deformada",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_83.png",
+   "fallos": [
+    "PROP",
+    "FONDO",
+    "MANOS",
+    "LOGO"
+   ],
+   "nota": "hombros muy musculosos; marca en las mallas",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_84.png",
+   "fallos": [
+    "MOVIL"
+   ],
+   "nota": "lentes del móvil raras",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_85.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS"
+   ],
+   "nota": "manos en los bolsillos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_86.png",
+   "fallos": [
+    "MOVIL",
+    "CARAPEQ"
+   ],
+   "nota": "móvil sin módulo de lentes",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_87.png",
+   "fallos": [
+    "MOVIL"
+   ],
+   "nota": "círculo enorme: parece un móvil Android, sin logo",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_88.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS"
+   ],
+   "nota": "manos en los bolsillos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_89.png",
+   "fallos": [
+    "MANOS"
+   ],
+   "nota": "móvil con 3 lentes (el mejor); dedos algo fusionados",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_90.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS"
+   ],
+   "nota": "manos en los bolsillos",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_91.png",
+   "fallos": [
+    "MOVIL",
+    "MANOS"
+   ],
+   "nota": "manzana visible, sin lentes",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_92.png",
+   "fallos": [
+    "MOVIL"
+   ],
+   "nota": "dos círculos más un logo raro",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_93.png",
+   "fallos": [
+    "MANOS",
+    "PROP",
+    "RECORTE"
+   ],
+   "nota": "mano en la puerta fusionada; cadera grande; piernas cortadas",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_94.png",
+   "fallos": [
+    "MANOS"
+   ],
+   "nota": "móvil con 3 lentes (bien); mano en la cadera borrosa",
+   "apta_para_entrenar": true
+  },
+  {
+   "img": "img_95.png",
+   "fallos": [
+    "CARAPEQ",
+    "MANOS",
+    "RECORTE"
+   ],
+   "nota": "manos fusionadas; piernas cortadas",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_96.png",
+   "fallos": [
+    "CARA2",
+    "FONDO"
+   ],
+   "nota": "cara redonda; bici deformada",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_97.png",
+   "fallos": [
+    "MANOS",
+    "FONDO",
+    "CARAPEQ"
+   ],
+   "nota": "mano en la rodilla fusionada; máquinas deformes",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_98.png",
+   "fallos": [
+    "MANOS",
+    "FONDO"
+   ],
+   "nota": "bulto negro a la izquierda; máquinas deformes",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_99.png",
+   "fallos": [
+    "CARAPEQ",
+    "FONDO",
+    "MANOS"
+   ],
+   "nota": "bici deformada",
+   "apta_para_entrenar": false
+  },
+  {
+   "img": "img_100.png",
+   "fallos": [
+    "MANOS"
+   ],
+   "nota": "mano con el pelo fusionada; por lo demás bien",
+   "apta_para_entrenar": true
+  }
+ ]
+}
