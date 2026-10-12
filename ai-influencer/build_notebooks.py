@@ -188,11 +188,12 @@ if PLATAFORMA == 'kaggle':
 # Prompts largos: SDXL lee 77 tokens por trozo; compel parte el texto en trozos y los junta (probado con diffusers 0.41).
 COMPEL = '''
 import re
-print('versión del cuaderno: 2026-10-12 e (sin pesos de compel, calidad alta)')
+print('versión del cuaderno: 2026-10-12 f (padding propio, sin pesos, calidad alta)')
 from compel import Compel, ReturnedEmbeddingsType
 compel = Compel(tokenizer=[pipe.tokenizer, pipe.tokenizer_2], text_encoder=[pipe.text_encoder, pipe.text_encoder_2],
                 returned_embeddings_type=ReturnedEmbeddingsType.PENULTIMATE_HIDDEN_STATES_NON_NORMALIZED,
                 requires_pooled=[False, True], truncate_long_prompts=False)
+VACIO = compel('')[0]   # codificación de un trozo vacío (1 x 77 x 2048)
 def codificar(prompt, negative):
     # los guiones se quitan porque compel los usaría como símbolo de peso (p. ej. "white-tiled")
     if 'deep cleavage' in prompt:   # el modelo tiende a ignorar el escote: se repite al principio (los pesos de compel dan error con SDXL)
@@ -202,7 +203,8 @@ def codificar(prompt, negative):
         cond, pooled = compel(prompt); ncond, npooled = compel(negative)
     except Exception as e:   # red de seguridad: si compel falla por cualquier motivo, se avisa y se usa un prompt simple
         print('aviso compel:', repr(e)[:120], '-> prompt simple'); cond, pooled = compel(' '.join(prompt.split()[:60])); ncond, npooled = compel(' '.join(negative.split()[:60]))
-    cond, ncond = compel.pad_conditioning_tensors_to_same_length([cond, ncond])
+    while cond.shape[1] < ncond.shape[1]: cond = torch.cat([cond, VACIO], dim=1)    # igualar longitudes con trozos vacíos (compel.pad_* falla con SDXL: empty_z)
+    while ncond.shape[1] < cond.shape[1]: ncond = torch.cat([ncond, VACIO], dim=1)
     return dict(prompt_embeds=cond, pooled_prompt_embeds=pooled, negative_prompt_embeds=ncond, negative_pooled_prompt_embeds=npooled)
 '''
 
