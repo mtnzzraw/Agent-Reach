@@ -190,8 +190,8 @@ compel = Compel(tokenizer=[pipe.tokenizer, pipe.tokenizer_2], text_encoder=[pipe
                 requires_pooled=[False, True], truncate_long_prompts=False)
 def codificar(prompt, negative):
     # los guiones se quitan porque compel los usaría como símbolo de peso (p. ej. "white-tiled")
-    for a in ('deep cleavage', 'plunging neckline', 'low cut', 'low neckline'):   # más peso: el modelo tiende a ignorar el escote
-        prompt = prompt.replace(a, '(' + a + ')1.4')
+    if 'deep cleavage' in prompt:   # el modelo tiende a ignorar el escote: se repite al principio (los pesos de compel dan error con SDXL)
+        prompt = 'deep cleavage, plunging neckline, ' + prompt
     cond, pooled = compel(prompt.replace('-', ' ')); ncond, npooled = compel(negative.replace('-', ' '))
     cond, ncond = compel.pad_conditioning_tensors_to_same_length([cond, ncond])
     return dict(prompt_embeds=cond, pooled_prompt_embeds=pooled, negative_prompt_embeds=ncond, negative_pooled_prompt_embeds=npooled)
