@@ -17,7 +17,7 @@ NEGATIVE_DS = ("nsfw, nudity, freckles, moles, deformed, bad anatomy, deformed i
 # Estilo para las publicaciones. Solo estética: no se añaden metadatos falsos de cámara; las fotos siguen siendo IA
 # y se publican etiquetadas como tal. Se permiten logos reales (p. ej. la manzana del iPhone).
 STYLE3 = "amateur iPhone photo, candid, unedited, slight grain, imperfect framing"
-NEGATIVE3 = ("black hair, dark brown hair, bangs, hair bun, blonde highlights, brown hair, balayage, nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, "
+NEGATIVE3 = ("cat ears, hair bow, pastel pink walls, cats, plush toys, black hair, dark brown hair, bangs, hair bun, blonde highlights, brown hair, balayage, nsfw, nudity, see-through clothing, nipples, topless, freckles, deformed, bad anatomy, deformed iris, uncanny, bad teeth, "
              "extra fingers, blurry, watermark, plastic skin, exaggerated proportions, huge breasts, disproportionate body, studio lighting, "
              "professional photography, bokeh, retouched, airbrushed, HDR, cinematic, deformed phone, phone without camera lenses")
 
