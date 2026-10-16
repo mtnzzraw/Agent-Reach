@@ -35,7 +35,7 @@ from google.genai import types
 client = genai.Client(api_key=API_KEY)"""),
 code("""PELO = 'pelo largo ondulado cobrizo'   # cámbialo si quieres otro color o estilo (por ejemplo: 'pelo largo liso castaño oscuro')
 FRASE_BASE = ('Crea una foto nueva de la misma mujer de las imágenes de referencia: mismo rostro, ' + PELO + ', figura natural, sin pecas, mujer adulta de unos 26 años. '
-              'Foto casera hecha con un iPhone, luz natural, ligero grano, aspecto 100 % real y sin retoque. Sin collares ni colgantes. '
+              'Foto casera hecha con un iPhone, luz natural, ligero grano, aspecto 100 % real y sin retoque: piel con poros y pequeñas imperfecciones, pelo con algo de frizz, enfoque de móvil sin perfección de estudio. Sin collares ni colgantes. '
               'Si aparece un móvil, es un iPhone con la manzana y tres cámaras bien dibujadas. Formato vertical 4:5.')
 TATUAJE = ' Lleva un pequeño tatuaje de línea fina de luna creciente en el pecho, entre las clavículas, sin collar ni colgante.'
 PLAN = __PLAN__
@@ -119,6 +119,8 @@ for f in sorted(glob.glob(f'{BASE}/gemini_out/*.png')):
     else:
         big = im.resize((im.width * 2, im.height * 2), Image.LANCZOS).filter(ImageFilter.UnsharpMask(1.2, 60, 2))
     big = big.resize((1080, round(big.height * 1080 / big.width)), Image.LANCZOS)
+    a = np.asarray(big).astype(np.float32) + np.random.default_rng(abs(hash(f)) % 2**32).normal(0, 2.2, (big.height, big.width, 3))   # grano ligero de sensor: quita el aspecto liso de IA
+    big = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8))
     big.save(sal, quality=95)
     print('HD', os.path.basename(sal), big.size, flush=True)
 print('Listo: lia2/gemini_hd')"""),
