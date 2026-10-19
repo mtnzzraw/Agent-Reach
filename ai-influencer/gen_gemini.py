@@ -1,5 +1,5 @@
 """Genera las fotos de Lía en lote con la API de Gemini (REST, sin dependencias salvo Pillow y numpy).
-Lee la clave de la variable de entorno GEMINI_API_KEY (NUNCA la escribas en el código ni en el chat).
+La clave va en la variable de entorno GEMINI_API_KEY o como secreto de red del entorno (cabecera x-goog-api-key). NUNCA la escribas en el código ni en el chat.
 Uso: python gen_gemini.py --refs carpeta_refs --out carpeta_salida --desde 1 --hasta 3 --variantes 2 [--pelo "pelo largo liso castaño oscuro"]"""
 import argparse, base64, csv, glob, io, json, os, re, sys, time, urllib.request, urllib.error
 from PIL import Image
@@ -20,7 +20,9 @@ def llamar(clave, prompt, refs):
     partes = [{"text": prompt}] + [{"inline_data": {"mime_type": "image/jpeg", "data": r}} for r in refs]
     for modalidades in (["IMAGE"], ["TEXT", "IMAGE"]):
         body = json.dumps({"contents": [{"parts": partes}], "generationConfig": {"responseModalities": modalidades}}).encode()
-        req = urllib.request.Request(URL % MODELO, data=body, headers={"Content-Type": "application/json", "x-goog-api-key": clave})
+        cab = {"Content-Type": "application/json"}
+        if clave: cab["x-goog-api-key"] = clave   # si no hay variable, el proxy del entorno añade la clave guardada como secreto
+        req = urllib.request.Request(URL % MODELO, data=body, headers=cab)
         try:
             with urllib.request.urlopen(req, timeout=180) as r:
                 j = json.load(r)
@@ -50,8 +52,8 @@ def main():
     ap.add_argument("--variantes", type=int, default=2); ap.add_argument("--pausa", type=float, default=8)
     ap.add_argument("--pelo", default="pelo largo ondulado cobrizo")
     a = ap.parse_args()
-    clave = os.environ.get("GEMINI_API_KEY")
-    if not clave: sys.exit("Falta la variable de entorno GEMINI_API_KEY")
+    clave = os.environ.get("GEMINI_API_KEY")   # opcional: si la clave está guardada como "secreto de red" del entorno, el proxy la añade solo
+    if not clave: print("Sin GEMINI_API_KEY en el entorno: se usa el secreto de red (cabecera x-goog-api-key) si está configurado.", flush=True)
     rutas = sorted(glob.glob(os.path.join(a.refs, "*.[jp][pn]*g")))[:5]
     if not rutas: sys.exit("No hay fotos de referencia en " + a.refs)
     refs = []
